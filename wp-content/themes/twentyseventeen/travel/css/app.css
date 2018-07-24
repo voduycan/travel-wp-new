@@ -1,7 +1,9 @@
 .my-statictis:last-child {
     border-right: none !important;
 }
-
+.js .menu-toggle, .js .dropdown-toggle {
+    display: block;
+}
 /* fallback */
 @font-face {
   font-family: 'Material Icons';
@@ -13147,7 +13149,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .navbar-brand img {
-  height: 20px;
+  height: 35px;
   width: auto;
 }
 

@@ -30,8 +30,8 @@
  <nav class="navbar navbar-light navbar-expand-md">
     <div class="container-fluid">
     <a class="navbar-brand" href="/">
-            <img src="<?php bloginfo('template_url'); ?>/travel/assets/logo.svg" class="d-none d-lg-block"/>
-            <img src="<?php bloginfo('template_url'); ?>/travel/assets/logo-icon.svg" class="d-block d-lg-none"/>
+            <img src="<?php the_field('main-logo', 21); ?>" class="d-none d-lg-block"/>
+            <img src="<?php the_field('sup-logo', 21); ?>" class="d-block d-lg-none"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -47,10 +47,14 @@
                  $menuID = $menuLocations['main-nav']; 
                  $primaryNav = wp_get_nav_menu_items($menuID); 
                foreach ( $primaryNav as $navItem ) {
-                  echo '<li class="nav-item"> 
+                  echo '<li class="nav-item '.$navItem->classes[0].' '.$navItem->classes[1].'"> 
                             <a class="nav-link" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a> 
+
                         </li>';
+                     
              }?>
+
+             
              <!--
                 <li class="nav-item active">
                     <a class="nav-link" href="/"><?php the_field('home', 21); ?>
@@ -72,7 +76,7 @@
                 <li class="nav-item d-md-none d-xl-block  ">
                     <a class="nav-link" href="/contact"><?php the_field('contact-us', 21); ?></a>
                 </li>
-
+-->  
                 <li class="nav-item dropdown  d-none d-md-block d-xl-none px-3">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php the_field('more', 21); ?>
@@ -83,7 +87,7 @@
                     </div>
                 </li>
 
--->             <?php 
+           <?php 
                     if( have_rows('phone-outline', 21) ):
                         while ( have_rows('phone-outline', 21) ) : the_row(); 
                             $phone_logo = get_sub_field('phone-logo');
@@ -128,7 +132,7 @@
                                 <?php  endwhile; ?>
                             </div>
                         <?php  endif; ?>
-                        
+
                     </li>
                 </ul>
 

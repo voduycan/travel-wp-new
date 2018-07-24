@@ -21,7 +21,7 @@
                 <div class="card card-feature d-flex align-items-center" data-aos="fade-up">
                     <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/building.svg" alt="Wholesalers">
                     <div class="card-body">
-                        <h5 class="card-title text-center"><strong><?php the_field('panel-img1-text', $post->ID); ?></strong></h5>
+                        <h5 class="card-title text-center"><strong><?php the_field('image1-text', $post->ID); ?></strong></h5>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="card card-feature d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
                     <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/rate.svg" alt="Wholesalers">
                     <div class="card-body">
-                        <h5 class="card-title text-center"><strong><?php the_field('panel-img2-text', $post->ID); ?></strong></h5>
+                        <h5 class="card-title text-center"><strong><?php the_field('image2-text', $post->ID); ?></strong></h5>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <div class="card card-feature d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
                     <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/price.svg" alt="Wholesalers">
                     <div class="card-body">
-                        <h5 class="card-title text-center"><strong><?php the_field('panel-img3-text', $post->ID); ?></strong></h5>
+                        <h5 class="card-title text-center"><strong><?php the_field('image3-text', $post->ID); ?></strong></h5>
                     </div>
                 </div>
             </div>
@@ -56,8 +56,8 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('location', $post->ID); ?></strong></h5>
-                        <small><?php the_field('location-sup', $post->ID); ?></small>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('p-location', $post->ID); ?></strong></h5>
+                        <small><?php the_field('p-location-sup', $post->ID); ?></small>
                     </div>
                 </div>
             </div>
@@ -65,8 +65,8 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('email', $post->ID); ?></strong></h5>
-                        <small><?php the_field('email-sup', $post->ID); ?></small>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('p-email', $post->ID); ?></strong></h5>
+                        <small><?php the_field('p-email-sup', $post->ID); ?></small>
                     </div>
                 </div>
             </div>
@@ -74,8 +74,8 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('call', $post->ID); ?></strong></h5>
-                        <small><?php the_field('call-sup', $post->ID); ?></small>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('p-call', $post->ID); ?></strong></h5>
+                        <small><?php the_field('p-call-sup', $post->ID); ?></small>
                     </div>
                 </div>
             </div>

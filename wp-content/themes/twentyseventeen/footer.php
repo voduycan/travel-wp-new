@@ -61,7 +61,7 @@
                         ?>
                     </ul>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-12 col-md-2">
                     <div class="media text-right mb-4 d-none d-md-flex">
                         <div class="media-body mr-4">
                             <?php the_field('address', 21); ?>
@@ -70,10 +70,10 @@
                     </div>
 
                     <div class="text-left text-md-right mt-2 mt-md-0">
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('twitter', 21); ?>" class="social-icon"/></a>
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('instagram', 21); ?>" class="social-icon"/></a>
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('linkedin', 21); ?>" class="social-icon"/></a>
-                        <a href="#" class="social-icon"><img src="<?php echo the_field('facebook', 21); ?>" class="social-icon"/></a>
+                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('twitter', 21); ?>" class="mr-b-2 social-icon"/></a>
+                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('instagram', 21); ?>" class="mr-b-2 social-icon"/></a>
+                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('linkedin', 21); ?>" class="mr-b-2 social-icon"/></a>
+                        <a href="#" class="social-icon"><img src="<?php echo the_field('facebook', 21); ?>" class="mr-b-2 social-icon"/></a>
                     </div>
                 </div>
             </div>

@@ -239,7 +239,7 @@
                 <div class="card card-feature d-flex align-items-center my-2 my-md-5" data-aos="fade-up" data-aos-delay="500">
                     <img class="card-img-top" src="<?php the_field('h-card2-img', $post->ID); ?>" alt="Wholesalers">
                     <div class="card-body">
-                        <h4 class="card-title text-center"><strong><?php the_field('h-card1-title', $post->ID); ?></strong></h4>
+                        <h4 class="card-title text-center"><strong><?php the_field('h-card2-title', $post->ID); ?></strong></h4>
                         <p class="text-center"><?php the_field('h-card2-text', $post->ID); ?></p>
                     </div>
                 </div>
@@ -248,7 +248,7 @@
                 <div class="card card-feature d-flex align-items-center my-2 my-md-5" data-aos="fade-up" data-aos-delay="1000">
                     <img class="card-img-top" src="<?php the_field('h-card3-img', $post->ID); ?>" alt="Wholesalers">
                     <div class="card-body">
-                        <h4 class="card-title text-center"><strong><?php the_field('h-card1-title', $post->ID); ?></strong></h4>
+                        <h4 class="card-title text-center"><strong><?php the_field('h-card3-title', $post->ID); ?></strong></h4>
                         <p class="text-center"><?php the_field('h-card3-text', $post->ID); ?></p>
                     </div>
                 </div>
@@ -276,7 +276,7 @@
         <?php the_field('use-text', $post->ID); ?>
         </p>
         <div class="row">
-            <div class="col-sm-4 ">
+            <div class="col-sm-12 col-md-4 mr-0-auto">
                 <a href="#" class="card card-video d-flex align-items-center my-5">
                     <div class="video">
                         <img class="video-thumbnail-placeholder" src="<?php the_field('video1-img', $post->ID); ?>" alt="Video">

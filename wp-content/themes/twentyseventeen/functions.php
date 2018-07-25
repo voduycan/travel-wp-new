@@ -58,7 +58,7 @@ function tao_custom_post_type()
      */
     $args = array(
         'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type ccc', //Mô tả của post type
+        'description' => 'Post type', //Mô tả của post type
         'supports' => array(
             'title',
             'editor',

@@ -3,6 +3,16 @@
 }
 .js .menu-toggle, .js .dropdown-toggle {
     display: block;
+    position: relative;
+}
+.dropdown-toggle:focus {
+    outline: none;
+}
+.mr-0-auto{
+  margin: 0 auto;
+}
+.mr-b-2{
+  margin-bottom: 0.5rem;
 }
 /* fallback */
 @font-face {
@@ -188,6 +198,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 [tabindex="-1"]:focus {
@@ -714,7 +725,7 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 100%;
   }
 }
 
@@ -4760,6 +4771,7 @@ input[type="button"].btn-block {
 .navbar-toggler:hover,
 .navbar-toggler:focus {
   text-decoration: none;
+  background: none;
 }
 
 .navbar-toggler:not(:disabled):not(.disabled) {
@@ -13173,7 +13185,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .nav-item img {
-  height: 20px;
+  height: 12px;
   width: auto;
 }
 
@@ -13881,6 +13893,7 @@ html[xmlns] .flexslider .slides {
 @media (max-width: 767.98px) {
   .hero-banner h1 {
     font-size: 32px;
+    margin-bottom: 0 !important;
   }
 
   .how-to-use .divider {
@@ -13967,7 +13980,7 @@ body {
   border: none;
   background: none;
   margin: -16px 0 0 -16px;
-  padding: 0;
+  padding: 1px 6px;
 }
 
 .card-video .video .play-button:hover {
@@ -13978,7 +13991,11 @@ body {
   height: 45px;
   color: #000;
 }
-
+@media only screen and (min-width: 576px) and (max-width: 767px){
+  .card-video .card-title {
+    height: auto;
+  }
+}
 .card-video:hover {
   text-decoration: none;
 }
@@ -14068,6 +14085,7 @@ body {
   height: 88%;
   width: auto;
   top: 55px;
+  max-width: max-content;
 }
 
 .full-width-feature.own-price .card-feature {

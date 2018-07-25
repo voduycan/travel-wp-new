@@ -46,37 +46,19 @@
                  $menuLocations = get_nav_menu_locations(); 
                  $menuID = $menuLocations['main-nav']; 
                  $primaryNav = wp_get_nav_menu_items($menuID); 
-               foreach ( $primaryNav as $navItem ) {
-                  echo '<li class="nav-item '.$navItem->classes[0].' '.$navItem->classes[1].'"> 
+
+                foreach ( $primaryNav as $navItem ) {
+                    $sss = '';
+                    foreach ( $navItem->classes as $a ) {
+                        $sss .= " ".$a;
+                    }
+                  echo '<li class="nav-item '.$sss.'"> 
                             <a class="nav-link" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a> 
 
                         </li>';
                      
              }?>
-
-             
-             <!--
-                <li class="nav-item active">
-                    <a class="nav-link" href="/"><?php the_field('home', 21); ?>
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/about"><?php the_field('about', 21); ?></a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><?php the_field('how-to', 21); ?></a>
-                </li>
-
-                <li class="nav-item d-md-none d-xl-block  ">
-                    <a class="nav-link" href="/faq"><?php the_field('faqs', 21); ?></a>
-                </li>
-
-                <li class="nav-item d-md-none d-xl-block  ">
-                    <a class="nav-link" href="/contact"><?php the_field('contact-us', 21); ?></a>
-                </li>
--->  
+            
                 <li class="nav-item dropdown  d-none d-md-block d-xl-none px-3">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php the_field('more', 21); ?>
@@ -96,8 +78,8 @@
                     endif;
                 ?>
                 <li class="nav-item d-none d-lg-block">
-                    <a class="nav-link" href="#"><img src="<?php echo $phone_logo; ?>"/>
-                           <?php echo $phone_number; ?>
+                    <a class="nav-link" href="#"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone-outline.svg" class="mr-2"/>
+                           <?php the_field('p-number', 21); ?>
                     </a>
                 </li>
             </ul>
@@ -114,25 +96,42 @@
                                     endwhile;
                                 endif;
                             ?>
-                            <span class="text-black"> <?php echo $user_name; ?></span>
-                            <img src="<?php echo $avatar; ?>" width="32" height="32" />
+                            <span class="text-black"><?php the_field('user', 21); ?></span>
+                            <img src="<?php the_field('user-avatar', 21); ?>" width="32" height="32" />
                         </div>
-                        <?php if( have_rows('setting', 21) ): ?>
-                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                               <?php while ( have_rows('setting', 21) ) : the_row(); 
-                                    $logo = get_sub_field('logo'); 
-                                    $text = get_sub_field('text');
-                                ?>
-                                 <a class="dropdown-item" href="#">
-                                    <div class="icon">
-                                        <img src="<?php echo $logo; ?>" />
-                                    </div>
-                                    <?php echo $text; ?>
-                                 </a>
-                                <?php  endwhile; ?>
-                            </div>
-                        <?php  endif; ?>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">
+                                <div class="icon">
+                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/manage.svg" />
+                                </div>
+                                <?php the_field('set-manage', 21); ?>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="icon">
+                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/account.svg" />
+                                </div>
+                                <?php the_field('set-account', 21); ?>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="icon">
+                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/support.svg" />
+                                </div>
+                                 <?php the_field('set-customer', 21); ?>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="icon">
+                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/staff.svg" />
+                                </div>
+                                <?php the_field('set-staff', 21); ?>
+                            </a>
 
+                            <a class="dropdown-item" href="#">
+                                <div class="icon">
+                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/log-out.svg" />
+                                </div>
+                                <?php the_field('set-log-out', 21); ?>
+                            </a>
+                        </div>
                     </li>
                 </ul>
 

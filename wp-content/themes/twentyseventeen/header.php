@@ -83,6 +83,8 @@
                     </a>
                 </li>
             </ul>
+
+             <?php if (!is_user_logged_in()): ?>
             <div class="my-2 my-lg-0 ml-3 d-none d-md-block">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown signed-in-dropdown">
@@ -136,8 +138,39 @@
                 </ul>
 
             </div>
+            <?php endif; ?>
+
+            <?php if (is_user_logged_in()): ?>
+            <div class="my-2 my-lg-0 ml-3 d-none d-md-block">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown sign-in-dropdown">
+                        <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <button class="btn btn-sm btn-outline-secondary btn-rounded sign-in-button" data-toggle="aside" data-target="#right-aside">SIGN IN</button>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <form class="py-4 px-3">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-outline-secondary btn-rounded">Sign In</button>
+                                <button type="button" class="btn btn-sm btn-link ml-3"  data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+
+            <?php endif; ?>
+
+
+
         </div>
-        </dvi>
+    </div>
 </nav> 
 
 	

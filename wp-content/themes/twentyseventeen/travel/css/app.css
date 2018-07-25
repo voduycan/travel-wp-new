@@ -2519,6 +2519,8 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .form-group {
   margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-text {

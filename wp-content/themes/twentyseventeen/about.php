@@ -27,12 +27,12 @@
 </section>    <section class="our-team py-3" id="our-team">
     <div class="container">
         <h1 class="section-title text-center">
-            <strong> <?php the_field('mt-title', $post->ID); ?></strong>
+            <strong> <?php the_field('mt-title', 424); ?></strong>
         </h1>
 
-    	<?php if( have_rows('team') ): ?>
+    	<?php if( have_rows('team', 424) ): ?>
         <div class="row mt-5">
-			<?php while( have_rows('team') ): the_row(); 
+			<?php while( have_rows('team', 424) ): the_row(); 
 
 				// vars
 				$avatar = get_sub_field('team-avatar');
@@ -131,14 +131,14 @@
 </div>    <section class="assistant mt-5 mt-lg-4 pb-3">
     <div class="container">
         <h1 class="section-title text-center mb-4">
-            <strong><?php the_field('n-title', $post->ID); ?></strong>
+            <strong><?php the_field('n-title', 424); ?></strong>
         </h1>
         <div class="row">
             <div class="col-12 text-center pb-5">
-                <a href="#" class="btn btn-outline-primary btn-lg btn-customer-support"><?php the_field('n-btn', $post->ID); ?></a>
-                <div class="mt-3"><small><?php the_field('n-or', $post->ID); ?></small></div>
-                <h2><?php the_field('n-number', $post->ID); ?></h2>
-                <div><small><?php the_field('n-time', $post->ID); ?></small></div>
+                <a href="#" class="btn btn-outline-primary btn-lg btn-customer-support"><?php the_field('n-btn', 424); ?></a>
+                <div class="mt-3"><small><?php the_field('n-or', 424); ?></small></div>
+                <h2><?php the_field('n-number', 424); ?></h2>
+                <div><small><?php the_field('n-time', 424); ?></small></div>
             </div>
         </div>
     </div>
@@ -146,12 +146,12 @@
 <section class="partner pt-3">
     <div class="container">
 
-    	<?php if( have_rows('trusted-logo', 5) ): ?>
+    	<?php if( have_rows('logo', 424) ): ?>
         <div class="row justify-content-center">
-        	<?php while( have_rows('trusted-logo', 5) ): the_row(); 
+        	<?php while( have_rows('logo', 424) ): the_row(); 
 
 				// vars
-				$image = get_sub_field('trusted-logo', 5);
+				$image = get_sub_field('image', 424);
 				?>
 				<?php if( $image ): ?>
 		            <div class="col-4 col-md-2">

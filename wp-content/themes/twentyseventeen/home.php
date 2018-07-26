@@ -50,14 +50,14 @@
         <img src="<?php bloginfo('template_url'); ?>/travel/assets/divider-1.jpg" />
     </div>
 </section>    <section class="contact mt-5 mt-lg-4">
-    <div class="container">
+    <div class="container content-center">
         <div class="row justify-content-center">
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('p-location', $post->ID); ?></strong></h5>
-                        <small><?php the_field('p-location-sup', $post->ID); ?></small>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-location', 424); ?></strong></h5>
+                        <small><?php the_field('c-location-text', 424); ?></small>
                     </div>
                 </div>
             </div>
@@ -65,8 +65,8 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('p-email', $post->ID); ?></strong></h5>
-                        <small><?php the_field('p-email-sup', $post->ID); ?></small>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-email', 424); ?></strong></h5>
+                        <small><?php the_field('c-email-text', 424); ?></small>
                     </div>
                 </div>
             </div>
@@ -74,8 +74,8 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('p-call', $post->ID); ?></strong></h5>
-                        <small><?php the_field('p-call-sup', $post->ID); ?></small>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-call', 424); ?></strong></h5>
+                        <small><?php the_field('c-call-text', 424); ?></small>
                     </div>
                 </div>
             </div>
@@ -90,11 +90,11 @@
             <?php the_field('trusted-title', $post->ID) ?>
         </h4>
 
-        <?php if( have_rows('trusted-logo') ): ?>
+        <?php if( have_rows('logo', 424) ): ?>
         <div class="row justify-content-center">
-            <?php while( have_rows('trusted-logo') ): the_row(); 
+            <?php while( have_rows('logo', 424) ): the_row(); 
 
-                $image = get_sub_field('trusted-logo');
+                $image = get_sub_field('image', 424);
 
             ?>
             <div class="col-4 col-md-2">
@@ -324,11 +324,11 @@
             <strong><?php the_field('from-title', $post->ID); ?></strong>
         </h1>
 
-         <?php if( have_rows('trusted-logo') ): ?>
+         <?php if( have_rows('logo', 424) ): ?>
         <div class="row justify-content-center">
-            <?php while( have_rows('trusted-logo') ): the_row(); 
+            <?php while( have_rows('logo', 424) ): the_row(); 
 
-                $image = get_sub_field('trusted-logo');
+                $image = get_sub_field('image', 424);
 
             ?>
             <div class="col-4 col-md-2">

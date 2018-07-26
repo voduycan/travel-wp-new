@@ -24,11 +24,11 @@
                 </div>
                 <div class="col-sm-3 d-none d-md-block">
                     <ul class="footer-list">
-                        <li><?php the_field('mail1', 21); ?></li>
-                        <li><?php the_field('mail2', 21); ?></li>
-                        <li><?php the_field('phone', 21); ?></li>
-                        <li><?php the_field('phone-aus', 21); ?></li>
-                        <li><?php the_field('phone-usa', 21); ?></li>
+                        <li><?php the_field('mail1', 422); ?></li>
+                        <li><?php the_field('mail2', 422); ?></li>
+                        <li><?php the_field('phone', 422); ?></li>
+                        <li><?php the_field('phone-aus', 422); ?></li>
+                        <li><?php the_field('phone-usa', 422); ?></li>
                     </ul>
                 </div>
 
@@ -64,16 +64,16 @@
                 <div class="col-sm-12 col-md-2">
                     <div class="media text-right mb-4 d-none d-md-flex">
                         <div class="media-body mr-4">
-                            <?php the_field('address', 21); ?>
+                            <?php the_field('address', 422); ?>
                         </div>
                         <img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" style="width:24px; height: auto;"/>
                     </div>
 
                     <div class="text-left text-md-right mt-2 mt-md-0">
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('twitter', 21); ?>" class="mr-b-2 social-icon"/></a>
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('instagram', 21); ?>" class="mr-b-2 social-icon"/></a>
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('linkedin', 21); ?>" class="mr-b-2 social-icon"/></a>
-                        <a href="#" class="social-icon"><img src="<?php echo the_field('facebook', 21); ?>" class="mr-b-2 social-icon"/></a>
+                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('twitter', 422); ?>" class="mr-b-2 social-icon"/></a>
+                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('instagram', 422); ?>" class="mr-b-2 social-icon"/></a>
+                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('linkedin', 422); ?>" class="mr-b-2 social-icon"/></a>
+                        <a href="#" class="social-icon"><img src="<?php echo the_field('facebook', 422); ?>" class="mr-b-2 social-icon"/></a>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
     <div class="bg-primary py-3 d-none d-mb-block">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-21">
+                <div class="col-sm-422">
                     <img src="<?php bloginfo('template_url'); ?>/travel/assets/logo-icon-white.svg" class="footer-logo-icon"/>
                 </div>
             </div>
@@ -148,7 +148,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-md-21 text-center">
+            <div class="form-group col-md-422 text-center">
               <button class="btn btn-primary btn-lg">SUBMIT</button>
             </div>
           </div>

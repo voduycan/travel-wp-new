@@ -49,8 +49,8 @@ function tao_custom_post_type()
      * Biến $label để chứa các text liên quan đến tên hiển thị của Post Type trong Admin
      */
     $label = array(
-        'name' => 'Header Footer', //Tên post type dạng số nhiều
-        'singular_name' => 'Header footer' //Tên post type dạng số ít
+        'name' => 'General', //Tên post type dạng số nhiều
+        'singular_name' => 'General' //Tên post type dạng số ít
     );
  
     /*
@@ -58,7 +58,7 @@ function tao_custom_post_type()
      */
     $args = array(
         'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type', //Mô tả của post type
+        'description' => 'General use', //Mô tả của post type
         'supports' => array(
             'title',
             'editor',
@@ -86,7 +86,7 @@ function tao_custom_post_type()
         'capability_type' => 'post' //
     );
  
-    register_post_type('headerfooter', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
+    register_post_type('general', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
  
 }
 /* Kích hoạt hàm tạo custom post type */
@@ -664,3 +664,4 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+

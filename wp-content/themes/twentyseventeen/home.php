@@ -204,7 +204,7 @@
                 </div>
             </div>
             <div class="hero-image d-none d-md-block">
-                <img src="<?php the_field('t-image', $post->ID); ?>" class=" mt-5 " data-aos="fade-left"/>
+                <img src="<?php the_field('t-image', $post->ID); ?>" class=" mt-5 ml-5" data-aos="fade-left"/>
             </div>
             <div class="col-12 d-md-none">
                 <img src="<?php the_field('t-image-mobile', $post->ID); ?>"/>

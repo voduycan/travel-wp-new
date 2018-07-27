@@ -178,7 +178,7 @@
     </div>
 </section>    <section class="assistant mt-5 mt-lg-4 pb-3">
     <div class="container">
-        <h1 class="section-title text-center mb-4"
+        <h1 class="section-title text-center mb-4">
             <strong><?php the_field('n-title', 424); ?></strong>
         </h1>
         <div class="row">

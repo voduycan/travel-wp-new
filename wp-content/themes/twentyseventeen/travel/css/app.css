@@ -4,6 +4,9 @@
 .js .menu-toggle, .js .dropdown-toggle {
     display: block;
     position: relative;
+    width: max-content;
+    right: 0;
+    padding: 0;
 }
 .dropdown-toggle:focus {
     outline: none;
@@ -21,12 +24,12 @@
 }
 @media only screen and (min-width: 1200px){
   .my-mr{
-   margin-left: 5.5% !important;
+   margin-left: 3.5% !important;
   }
 }
 @media only screen and (max-width: 767.98px){
   .content-center{
-      width: 250px !important;
+      width: min-content !important;
       margin: 0 auto;
   }
 }
@@ -536,6 +539,7 @@ h6,
   font-weight: 500;
   line-height: 1.2;
   color: inherit;
+  padding: 0;
 }
 
 h1,
@@ -746,7 +750,7 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 100%;
+    max-width: 720px;
   }
 }
 
@@ -4709,7 +4713,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px 1rem;
+  padding: 24px 1rem;
 }
 
 .navbar > .container,
@@ -5958,6 +5962,7 @@ input[type="button"].btn-block {
 }
 
 .media {
+  margin-bottom: 0.5em !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13184,7 +13189,8 @@ html[xmlns] .flexslider .slides {
 }
 
 .navbar-brand img {
-  height: 35px;
+  margin-left: -3px;
+  height: auto;
   width: auto;
 }
 
@@ -13318,14 +13324,11 @@ html[xmlns] .flexslider .slides {
 }
 
 .page-about .statistic .number img {
-  height: 60px;
+  height: 65px;
   width: auto;
   margin-top: -10px;
 }
 
-.page-about .why-use .media-why img {
-  max-width: 48px;
-}
 
 .page-about .why-use .media-why .media-body h5 {
   font-size: 24px;
@@ -13823,7 +13826,7 @@ html[xmlns] .flexslider .slides {
 
 .contact .media-contact {
   color: #659BD1;
-  line-height: 1.2;
+  line-height: 1.5;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -13852,7 +13855,7 @@ html[xmlns] .flexslider .slides {
 
 .how-it-works .card-feature .card-img-top {
   width: auto;
-  height: 64px;
+  height: 85px;
 }
 
 .how-to-use {
@@ -13886,7 +13889,9 @@ html[xmlns] .flexslider .slides {
 .full-width-feature .card-feature .card-body h5 {
   font-size: 1rem;
 }
-
+.full-width-feature .card-feature .card-body h5 strong p{
+  line-height: 1.2;
+}
 .full-width-feature .card-feature .card-body .badge {
   width: 30px;
   height: 1px;

@@ -42,6 +42,9 @@ register_nav_menus(
 
 /////////////////
 
+
+
+
 function tao_custom_post_type()
 {
  

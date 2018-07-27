@@ -62,7 +62,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-2">
-                    <div class="media text-right mb-4 d-none d-md-flex">
+                    <div class="media text-right d-none d-md-flex">
                         <div class="media-body mr-4">
                             <?php the_field('address', 422); ?>
                         </div>
@@ -101,10 +101,10 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <select class="custom-select mr-sm-2" id="prefix">
-                <option selected>Prefix</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected><?php echo the_field('prefix', 424); ?></option>
+                <option value="1"><?php echo the_field('pre-one', 424); ?></option>
+                <option value="2"><?php echo the_field('pre-two', 424); ?></option>
+                <option value="3"><?php echo the_field('pre-three', 424); ?></option>
               </select>
             </div>
             <div class="form-group col-md-6">
@@ -132,18 +132,18 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <select class="custom-select mr-sm-2" id="country">
-                <option selected>Country</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected><?php echo the_field('country', 424); ?></option>
+                <option value="1"><?php echo the_field('ct-one', 424); ?></option>
+                <option value="2"><?php echo the_field('ct-two', 424); ?></option>
+                <option value="3"><?php echo the_field('ct-three', 424); ?></option>
               </select>
             </div>
             <div class="form-group col-md-6">
               <select class="custom-select mr-sm-2" id="city">
-                <option selected>City</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected><?php echo the_field('city', 424); ?></option>
+                <option value="1"><?php echo the_field('cty-one', 424); ?></option>
+                <option value="2"><?php echo the_field('cty-two', 424); ?></option>
+                <option value="3"><?php echo the_field('cty-three', 424); ?></option>
               </select>
             </div>
           </div>

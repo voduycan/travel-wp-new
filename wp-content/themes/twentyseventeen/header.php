@@ -21,8 +21,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+
 <link href="<?php bloginfo('template_url'); ?>/travel/css/app.css" rel="stylesheet">
 <link href="<?php bloginfo('template_url'); ?>/travel/css/vendor.css" rel="stylesheet">
+
 </head>
 
 <body <?php body_class(); ?>>

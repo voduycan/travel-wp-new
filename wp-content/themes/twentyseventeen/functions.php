@@ -44,7 +44,7 @@ register_nav_menus(
 
 
 if( function_exists('acf_add_options_page')) {
-	acf_add_options_page(array('page_title'=>'Footer','menu_title'=>'Footer','menu_slug'=>'theme-options','post_id' => 'options','capability'=>'edit_posts','redirect'=>true));
+	acf_add_options_page(array('page_title'=>'Header & Footer','menu_title'=>'Header & Footer','menu_slug'=>'theme-options','post_id' => 'options','capability'=>'edit_posts','redirect'=>true));
 	acf_add_options_sub_page(array('page_title'=>'Footer Area','menu_title'=>'Footer Area','parent_slug'=>'theme-options'));
 	acf_add_options_sub_page(array('page_title'=>'Header Area','menu_title'=>'Header Area','parent_slug'=>'theme-options'));		
 }

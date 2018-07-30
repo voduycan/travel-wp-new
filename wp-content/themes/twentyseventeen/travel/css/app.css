@@ -6,7 +6,6 @@
     position: relative;
     width: max-content;
     right: 0;
-    padding: 0;
 }
 .dropdown-toggle:focus {
     outline: none;
@@ -3371,10 +3370,18 @@ fieldset:disabled a.btn {
   border-color: #F5AC5F;
 }
 
+.btn-outline-secondary:focus{
+  background: #fff;
+}
+.btn-outline-secondary:hover{
+  background: #F5AC5F;
+}
+
 .btn-outline-secondary:focus,
 .btn-outline-secondary.focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(245, 172, 95, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(245, 172, 95, 0.5);
+
 }
 
 .btn-outline-secondary.disabled,
@@ -4713,7 +4720,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 24px 1rem;
+  padding: 20px 1rem;
 }
 
 .navbar > .container,
@@ -13190,7 +13197,7 @@ html[xmlns] .flexslider .slides {
 
 .navbar-brand img {
   margin-left: -3px;
-  height: auto;
+  height: 25px;
   width: auto;
 }
 
@@ -13329,6 +13336,9 @@ html[xmlns] .flexslider .slides {
   margin-top: -10px;
 }
 
+.page-about .why-use .media-why img {
+    max-width: 48px;
+}
 
 .page-about .why-use .media-why .media-body h5 {
   font-size: 24px;
@@ -13826,12 +13836,16 @@ html[xmlns] .flexslider .slides {
 
 .contact .media-contact {
   color: #659BD1;
-  line-height: 1.5;
+  line-height: 1.2;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-
+.contact .media-contact p{
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;   
+}
 .contact .media-contact > img {
   width: 32px;
   height: auto;
@@ -13855,7 +13869,7 @@ html[xmlns] .flexslider .slides {
 
 .how-it-works .card-feature .card-img-top {
   width: auto;
-  height: 85px;
+  height: 63px;
 }
 
 .how-to-use {
@@ -13891,6 +13905,7 @@ html[xmlns] .flexslider .slides {
 }
 .full-width-feature .card-feature .card-body h5 strong p{
   line-height: 1.2;
+  margin: 0;
 }
 .full-width-feature .card-feature .card-body .badge {
   width: 30px;
@@ -13923,7 +13938,6 @@ html[xmlns] .flexslider .slides {
 @media (max-width: 767.98px) {
   .hero-banner h1 {
     font-size: 32px;
-    margin-bottom: 0 !important;
   }
 
   .how-to-use .divider {
@@ -13950,6 +13964,7 @@ body {
 .divider img {
   width: 100%;
   height: auto;
+  margin-bottom: -1px;
 }
 
 .loading img {
@@ -14246,8 +14261,8 @@ footer .social-icon {
 }
 
 .signed-in-dropdown .dropdown-toggle img {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
 }
 
 .signed-in-dropdown .dropdown-toggle:hover {

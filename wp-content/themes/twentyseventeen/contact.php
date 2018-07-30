@@ -14,15 +14,15 @@
     <section class="hero-banner bg-primary text-light">
     <div class="container text-center">
         <h1 class="text-light mt-5 pt-5 pb-4">
-            <strong><?php the_field('contact-title', $post->ID); ?></strong>
+            <strong><?php the_field('ctu-title', $post->ID); ?></strong>
         </h1>
         
         <div class="row text-center justify-content-center">
             <div class="col-12 pb-5">
-                <a href="#" class="btn btn-outline-light btn-lg btn-customer-support"><?php the_field('n-btn', 424); ?></a>
-                <div class="mt-3"><small><?php the_field('n-or', 424); ?></small></div>
-                <h2><?php the_field('n-number', 424); ?></h2>
-                <div><small><?php the_field('n-time', 424); ?></small></div>
+                <a href="#" class="btn btn-outline-light btn-lg btn-customer-support"><?php the_field('ctu-btn', $post->ID); ?></a>
+                <div class="mt-3"><small><?php the_field('ctu-or', $post->ID); ?></small></div>
+                <h2><?php the_field('ctu-number', $post->ID); ?></h2>
+                <div><small><?php the_field('ctu-time', $post->ID); ?></small></div>
             </div>
             <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/arrow-down.png" /></a>
         </div>
@@ -39,8 +39,8 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-location', 424); ?></strong></h5>
-                        <small><?php the_field('c-location-text', 424); ?></small>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-location', $post->ID); ?></strong></h5>
+                        <small><?php the_field('c-location-text', $post->ID); ?></small>
                     </div>
                 </div>
             </div>
@@ -48,8 +48,8 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-email', 424); ?></strong></h5>
-                        <small><?php the_field('c-email-text', 424); ?></small>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-email', $post->ID); ?></strong></h5>
+                        <small><?php the_field('c-email-text', $post->ID); ?></small>
                     </div>
                 </div>
             </div>
@@ -57,8 +57,8 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-call', 424); ?></strong></h5>
-                        <small><?php the_field('c-call-text', 424); ?>
+                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-call', $post->ID); ?></strong></h5>
+                        <small><?php the_field('c-call-text', $post->ID); ?>
                         </small>
                     </div>
                 </div>

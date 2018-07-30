@@ -10,7 +10,7 @@
 ?>
  <?php  get_header(); ?>
 <div class="page-about">
-    <section class="hero-banner bg-primary text-light" style="height:  968px;">
+    <section class="hero-banner bg-primary text-light" style="height: 968px;">
     <div class="container text-center">
         <h1 class="text-light  pt-5 pb-4">
             <strong><?php the_field('about-us', $post->ID); ?></strong>
@@ -131,14 +131,14 @@
 </div>    <section class="assistant mt-5 mt-lg-4 pb-3">
     <div class="container">
         <h1 class="section-title text-center mb-4">
-            <strong><?php the_field('n-title', 424); ?></strong>
+            <strong><?php the_field('n-title', $post->ID); ?></strong>
         </h1>
         <div class="row">
             <div class="col-12 text-center pb-5">
-                <a href="#" class="btn btn-outline-primary btn-lg btn-customer-support"><?php the_field('n-btn', 424); ?></a>
-                <div class="mt-3"><small><?php the_field('n-or', 424); ?></small></div>
-                <h2><?php the_field('n-number', 424); ?></h2>
-                <div><small><?php the_field('n-time', 424); ?></small></div>
+                <a href="#" class="btn btn-outline-primary btn-lg btn-customer-support"><?php the_field('n-btn', $post->ID); ?></a>
+                <div class="mt-3"><small><?php the_field('n-or', $post->ID); ?></small></div>
+                <h2><?php the_field('n-number', $post->ID); ?></h2>
+                <div><small><?php the_field('n-time', $post->ID); ?></small></div>
             </div>
         </div>
     </div>

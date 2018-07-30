@@ -19,7 +19,7 @@
     <div class="links py-5">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2 d-none d-md-block">
+                <div class="col-sm-2 d-none d-md-block" style="padding-right: 0;">
                     <img src="<?php bloginfo('template_url'); ?>/travel/assets/logo.svg" class="footer-logo mb-4"/>
                 </div>
                 <div class="col-sm-3 d-none d-md-block">
@@ -101,10 +101,10 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <select class="custom-select mr-sm-2" id="prefix">
-                <option selected><?php echo the_field('prefix', 424); ?></option>
-                <option value="1"><?php echo the_field('pre-one', 424); ?></option>
-                <option value="2"><?php echo the_field('pre-two', 424); ?></option>
-                <option value="3"><?php echo the_field('pre-three', 424); ?></option>
+                <option selected><?php echo the_field('prefix', 'options'); ?></option>
+                <option value="1"><?php echo the_field('pre-one', 'options'); ?></option>
+                <option value="2"><?php echo the_field('pre-two', 'options'); ?></option>
+                <option value="3"><?php echo the_field('pre-three', 'options'); ?></option>
               </select>
             </div>
             <div class="form-group col-md-6">
@@ -132,18 +132,18 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <select class="custom-select mr-sm-2" id="country">
-                <option selected><?php echo the_field('country', 424); ?></option>
-                <option value="1"><?php echo the_field('ct-one', 424); ?></option>
-                <option value="2"><?php echo the_field('ct-two', 424); ?></option>
-                <option value="3"><?php echo the_field('ct-three', 424); ?></option>
+                <option selected><?php echo the_field('country', 'options'); ?></option>
+                <option value="1"><?php echo the_field('ct-one', 'options'); ?></option>
+                <option value="2"><?php echo the_field('ct-two', 'options'); ?></option>
+                <option value="3"><?php echo the_field('ct-three', 'options'); ?></option>
               </select>
             </div>
             <div class="form-group col-md-6">
               <select class="custom-select mr-sm-2" id="city">
-                <option selected><?php echo the_field('city', 424); ?></option>
-                <option value="1"><?php echo the_field('cty-one', 424); ?></option>
-                <option value="2"><?php echo the_field('cty-two', 424); ?></option>
-                <option value="3"><?php echo the_field('cty-three', 424); ?></option>
+                <option selected><?php echo the_field('city', 'options'); ?></option>
+                <option value="1"><?php echo the_field('cty-one', 'options'); ?></option>
+                <option value="2"><?php echo the_field('cty-two', 'options'); ?></option>
+                <option value="3"><?php echo the_field('cty-three', 'options'); ?></option>
               </select>
             </div>
           </div>

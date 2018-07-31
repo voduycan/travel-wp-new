@@ -14,16 +14,10 @@
     <section class="hero-banner bg-primary text-light">
     <div class="container text-center">
         <h1 class="text-light mt-5 pt-5 pb-4">
-            <strong><?php the_field('ctu-title', $post->ID); ?></strong>
+            <strong><?php the_field('ct-mytitle', $post->ID); ?></strong>
         </h1>
-        
+        <?php the_field('ct-editor', $post->ID); ?>
         <div class="row text-center justify-content-center">
-            <div class="col-12 pb-5">
-                <a href="#" class="btn btn-outline-light btn-lg btn-customer-support"><?php the_field('ctu-btn', $post->ID); ?></a>
-                <div class="mt-3"><small><?php the_field('ctu-or', $post->ID); ?></small></div>
-                <h2><?php the_field('ctu-number', $post->ID); ?></h2>
-                <div><small><?php the_field('ctu-time', $post->ID); ?></small></div>
-            </div>
             <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/arrow-down.png" /></a>
         </div>
     </div>
@@ -68,31 +62,35 @@
 </section>    <section class="our-team py-3" id="our-team">
     <div class="container">
         <h1 class="section-title text-center">
-            <strong> <?php the_field('mt-title', 424); ?></strong>
+            <strong> <?php the_field('cm-title', $post->ID); ?></strong>
         </h1>
 
-    	<?php if( have_rows('team', 424) ): ?>
+    	<?php if( have_rows('cm-team', $post->ID) ): ?>
         <div class="row mt-5">
-			<?php while( have_rows('team', 424) ): the_row(); 
+			<?php while( have_rows('cm-team', $post->ID) ): the_row(); 
 
 				// vars
-				$avatar = get_sub_field('team-avatar');
-				$name = get_sub_field('team-name');
-				$work = get_sub_field('team-work');
-				$mail = get_sub_field('team-mail');
+				$avatar = get_sub_field('cm-avatar');
+				$name = get_sub_field('cm-name');
+				$work = get_sub_field('cm-work');
+				$mail = get_sub_field('cm-mail');
 				?>
-	            <div class="col-6 col-md-4">
-	                <a href="#" class="card card-team d-flex align-items-center text-center my-3">
-	                    <div class="avatar">
-	                        <img class="video-thumbnail-placeholder" src="<?php echo $avatar; ?>" alt="Travelward team">
-	                    </div>
-	                    <div class="card-body">
-	                        <h5 class="card-title"><strong><?php echo $name; ?></strong></h5>
-	                        <h6><?php echo $work; ?></h6>
-	                        <small><?php echo $mail; ?></small>
-	                    </div>
-	                </a>
-	            </div>
+                <?php if( $avatar || $name || $work || $mail ): ?>
+    	            <div class="col-6 col-md-4">
+    	                <a href="#" class="card card-team d-flex align-items-center text-center my-3">
+                            <?php if( $avatar ): ?>
+                                <div class="avatar">
+        	                        <img class="video-thumbnail-placeholder" src="<?php echo $avatar; ?>" alt="Travelward team">
+        	                    </div>
+                            <?php endif; ?> 
+    	                    <div class="card-body">
+    	                        <h5 class="card-title"><strong><?php echo $name; ?></strong></h5>
+    	                        <h6><?php echo $work; ?></h6>
+    	                        <small><?php echo $mail; ?></small>
+    	                    </div>
+    	                </a>
+    	            </div>
+                <?php endif; ?> 
 			<?php endwhile; ?>
 		</div>
 		<?php endif; ?>	

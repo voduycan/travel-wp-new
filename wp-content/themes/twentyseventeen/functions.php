@@ -17,6 +17,34 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 	return;
 }
+// Customize mce editor font sizes
+if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
+    function wpex_mce_text_sizes( $initArray ){
+        $initArray['fontsize_formats'] = "9px 10px 11px 12px 13px 14px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 27px 28px 29px 30px 31px 32px 36px 37px 38px 39px 40px 41px 42px 43px 44px 45px 50px 55px 60px 65px 70px 75px 80px 85px 90px";
+        return $initArray;
+    }
+}
+add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
+
+
+add_filter( 'tiny_mce_before_init', 'custom_mce_before_init' );
+function custom_mce_before_init( $settings ) {
+    $style_formats = array(
+        array(
+            'title' => 'Button Outline Light',
+            'selector' => 'a',
+            'classes' => 'btn btn-outline-light btn-lg btn-customer-support',
+        ),
+        array(
+            'title' => 'Button Outline Primary',
+            'selector' => 'a',
+            'classes' => 'btn btn-outline-primary btn-lg btn-customer-support',
+        )
+    );
+    $settings['style_formats'] = json_encode( $style_formats );
+    return $settings;
+}
+
 
 
 //top menu
@@ -45,62 +73,10 @@ register_nav_menus(
 
 if( function_exists('acf_add_options_page')) {
 	acf_add_options_page(array('page_title'=>'Header & Footer','menu_title'=>'Header & Footer','menu_slug'=>'theme-options','post_id' => 'options','capability'=>'edit_posts','redirect'=>true));
+	acf_add_options_sub_page(array('page_title'=>'Header Area','menu_title'=>'Header Area','parent_slug'=>'theme-options'));
 	acf_add_options_sub_page(array('page_title'=>'Footer Area','menu_title'=>'Footer Area','parent_slug'=>'theme-options'));
-	acf_add_options_sub_page(array('page_title'=>'Header Area','menu_title'=>'Header Area','parent_slug'=>'theme-options'));		
+			
 }
-
-function tao_custom_post_type()
-{
- 
-    /*
-     * Biến $label để chứa các text liên quan đến tên hiển thị của Post Type trong Admin
-     */
-    $label = array(
-        'name' => 'General', //Tên post type dạng số nhiều
-        'singular_name' => 'General' //Tên post type dạng số ít
-    );
- 
-    /*
-     * Biến $args là những tham số quan trọng trong Post Type
-     */
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'General use', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'author',
-            'thumbnail',
-            'comments',
-            'trackbacks',
-            'revisions',
-            'custom-fields'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('general', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
- 
-}
-/* Kích hoạt hàm tạo custom post type */
-add_action('init', 'tao_custom_post_type');
-
-
-
 
 /**
 
@@ -671,4 +647,6 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+
 

@@ -15,14 +15,8 @@
         <h1 class="text-light  mt-5 pt-5 pb-4">
             <strong><?php the_field('fc-title', $post->ID); ?></strong>
         </h1>
-        
+        <?php the_field('faq-editor', $post->ID); ?>
         <div class="row text-center justify-content-center">
-            <div class="col-12 pb-5">
-                <a href="#" class="btn btn-outline-light btn-lg btn-customer-support"><?php the_field('fc-btn', $post->ID); ?></a>
-                <div class="mt-3"><small><?php the_field('fc-or', $post->ID); ?></small></div>
-                <h2><?php the_field('fc-number', $post->ID); ?></h2>
-                <div><small><?php the_field('fc-time', $post->ID); ?></small></div>
-            </div>
             <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/arrow-down.png"/></a>
         </div>
     </div>
@@ -203,17 +197,8 @@
     </div>
 </section>    <section class="assistant mt-5 mt-lg-4 pb-3">
     <div class="container">
-        <h1 class="section-title text-center mb-4">
-            <strong><?php the_field('fc-title2', $post->ID); ?></strong>
-        </h1>
-        <div class="row">
-            <div class="col-12 text-center pb-5">
-                <a href="#" class="btn btn-outline-primary btn-lg btn-customer-support"><?php the_field('fc-btn2', $post->ID); ?></a>
-                <div class="mt-3"><small><?php the_field('fc-or2', $post->ID); ?></small></div>
-                <h2><?php the_field('fc-number2', $post->ID); ?></h2>
-                <div><small><?php the_field('fc-time2', $post->ID); ?></small></div>
-            </div>
-        </div>
+        <?php the_field('faq-editor2', $post->ID); ?>
+        
     </div>
 </section></div>
 

@@ -80,33 +80,34 @@
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center">
-                <button class="btn btn-lg btn-outline-primary btn-rounded mt-4 mt-lg-2 contact-button"><?php the_field('contact-btn', $post->ID); ?></button>
+                <button class="btn btn-lg btn-outline-primary btn-rounded mt-4 mt-lg-2 contact-button"><?php the_field('c-btn', $post->ID); ?></button>
             </div>
         </div>
     </div>
 </section>    <section class="partner pt-5">
     <div class="container">
         <h4 class="text-uppercase text-center my-5 text-trusted-by">
-            <?php the_field('trusted-title', $post->ID) ?>
+            <?php the_field('tr-title', $post->ID) ?>
         </h4>
 
-        <?php if( have_rows('logo', 424) ): ?>
+        <?php if( have_rows('logo', $post->ID) ): ?>
         <div class="row justify-content-center">
-            <?php while( have_rows('logo', 424) ): the_row(); 
+            <?php while( have_rows('logo', $post->ID) ): the_row(); 
 
-                $image = get_sub_field('image', 424);
+                $image = get_sub_field('image', $post->ID);
 
             ?>
-            <div class="col-4 col-md-2">
+            <?php if( $image ): ?>
+                <div class="col-4 col-md-2">
 
-                <div class="partner-icon mb-4">
+                    <div class="partner-icon mb-4">
 
-                    <img src="<?php echo $image; ?>" />
+                        <img src="<?php echo $image; ?>" />
+
+                    </div>
 
                 </div>
-
-            </div>
-
+            <?php endif ?>
             <?php endwhile; ?>
 
         </div>
@@ -166,25 +167,27 @@
     </div>
 </section>    <section class="stats  my-3 py-3">
     <div class="container">
-
+    <?php $k=0;?>
     <?php if( have_rows('statictis') ): ?>
 
         <div class="row justify-content-center">
 
             <?php while( have_rows('statictis') ): the_row(); 
-
+               
                 // vars
                 $s_number = get_sub_field('s-number');
                 $s_sup = get_sub_field('s-sup');
                 $s_name = get_sub_field('s-name');
 
             ?>
-                <div class="col-6 col-md-3 border-right mb-4 my-statictis">
-                    <div class="statistic text-center">
-                        <div class="number"><?php echo $s_number; ?><span class="superscript"><?php echo $s_sup; ?></span></div>
-                        <div class="text text-black-50"><?php echo $s_name; ?></div>
+                <?php if ( $s_number || $s_sup || $s_name ):  $k++; ?>
+                    <div class="col-6 col-md-3 border-right mb-4 my-statictis" id="<?php echo 'statistic'.$k ;?>">
+                        <div class="statistic text-center">
+                            <div class="number"><?php echo $s_number; ?><span class="superscript"><?php echo $s_sup; ?></span></div>
+                            <div class="text text-black-50"><?php echo $s_name; ?></div>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             <?php endwhile; ?>
         </div>
     <?php endif; ?>
@@ -321,26 +324,27 @@
     <section class="partner pt-5">
     <div class="container">
         <h1 class="section-title text-center mb-5">
-            <strong><?php the_field('from-title', $post->ID); ?></strong>
+            <strong><?php the_field('wd-title', $post->ID); ?></strong>
         </h1>
 
-         <?php if( have_rows('logo', 424) ): ?>
+         <?php if( have_rows('wd-logo', $post->ID) ): ?>
         <div class="row justify-content-center">
-            <?php while( have_rows('logo', 424) ): the_row(); 
+            <?php while( have_rows('wd-logo', $post->ID) ): the_row(); 
 
-                $image = get_sub_field('image', 424);
+                $image = get_sub_field('wd-image', $post->ID);
 
             ?>
-            <div class="col-4 col-md-2">
+            <?php if( $image ): ?>
+                <div class="col-4 col-md-2">
 
-                <div class="partner-icon mb-4">
+                    <div class="partner-icon mb-4">
 
-                    <img src="<?php echo $image; ?>" />
+                        <img src="<?php echo $image; ?>" />
+
+                    </div>
 
                 </div>
-
-            </div>
-
+            <?php endif; ?>
             <?php endwhile; ?>
 
         </div>
@@ -349,7 +353,7 @@
 
         
         <h5 class="text-black-50 text-center mb-5">
-            <strong><?php the_field('from-text', $post->ID); ?> </strong>
+            <strong><?php the_field('wd-text', $post->ID); ?> </strong>
         </h5>
     </div>
 </section>    <div class="request-call py-3 d-none d-md-block">

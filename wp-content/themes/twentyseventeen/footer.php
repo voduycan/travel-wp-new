@@ -47,35 +47,40 @@
                     </ul>
                 </div>
 
-                <div class="col-7 col-md-2">
-                    <ul class="footer-list">
-                    	<?php
-                        	$menuLocations = get_nav_menu_locations();
-                        	$menuID = $menuLocations['sup-nav'];
-                        	$primaryNav = wp_get_nav_menu_items($menuID); 
-                        	foreach ( $primaryNav as $navItem) {
-                        		echo '<li> 
-                        				<a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a>
-                        		</li>';
-                        	}
-                        ?>
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-2">
-                    <div class="media text-right d-none d-md-flex">
-                        <div class="media-body mr-4">
-                            <?php the_field('address', 'options'); ?>
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" style="width:24px; height: auto;"/>
+                <div class=" col-7 col-md-4">
+                    <div class="row">
+                    	<div class="col-12 col-md-6">
+                    	<ul class="footer-list">
+	                    	<?php
+	                        	$menuLocations = get_nav_menu_locations();
+	                        	$menuID = $menuLocations['sup-nav'];
+	                        	$primaryNav = wp_get_nav_menu_items($menuID); 
+	                        	foreach ( $primaryNav as $navItem) {
+	                        		echo '<li> 
+	                        				<a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a>
+	                        		</li>';
+	                        	}
+	                        ?>
+	                    </ul>
                     </div>
+                 	<div class="col-12 col-md-6">
+	                    <div class="media text-right d-none d-md-flex">
+	                        <div class="media-body mr-4">
+	                            <?php the_field('address', 'options'); ?>
+	                        </div>
+	                        <img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" style="width:24px; height: auto;"/>
+	                    </div>
 
-                    <div class="text-left text-md-right mt-2 mt-md-0">
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('twitter', 'options'); ?>" class="mr-b-2 social-icon"/></a>
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('instagram', 'options'); ?>" class="mr-b-2 social-icon"/></a>
-                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('linkedin', 'options'); ?>" class="mr-b-2 social-icon"/></a>
-                        <a href="#" class="social-icon"><img src="<?php echo the_field('facebook', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+	                    <div class="text-left text-md-right mt-2 mt-md-0">
+	                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('twitter', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+	                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('instagram', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+	                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('linkedin', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+	                        <a href="#" class="social-icon"><img src="<?php echo the_field('facebook', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+	                    </div>
+	                </div>
                     </div>
                 </div>
+               
             </div>
         </div>
     </div>

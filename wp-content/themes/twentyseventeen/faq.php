@@ -10,7 +10,7 @@
 <?php  get_header(); ?>
 
 <div class="page-faq">
-    <section class="hero-banner bg-primary text-light">
+    <section class="hero-banner bg-primary text-light my-banner">
     <div class="container text-center">
         <h1 class="text-light  mt-5 pt-5 pb-4">
             <strong><?php the_field('fc-title', $post->ID); ?></strong>

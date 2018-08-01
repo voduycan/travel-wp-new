@@ -19,7 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TravelWards</title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <?php wp_head(); ?>
 
 <link href="<?php bloginfo('template_url'); ?>/travel/css/app.css" rel="stylesheet">
@@ -76,7 +76,7 @@
             
 
 
-                <li class="nav-item dropdown  d-none d-md-block d-xl-none">
+                <li class="nav-item dropdown  d-none d-md-block d-xl-none px-3">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php the_field('more', 'options'); ?>
                     </a>

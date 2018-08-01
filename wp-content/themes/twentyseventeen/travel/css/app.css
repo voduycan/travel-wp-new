@@ -23,20 +23,28 @@
 .dropdown-toggle:focus {
     outline: none;
 }
+.my-btn{
+  width: 205px;
+}
 .mr-0-auto{
   margin: 0 auto;
 }
 .mr-b-2{
   margin-bottom: 0.6rem;
 }
+@media only screen and (min-width: 768px){
+  .my-mr{
+   margin-left: 4% !important;
+  }
+}
 @media only screen and (min-width: 991px){
   .my-mr{
-   margin-left: 2% !important;
+   margin-left: 6% !important;
   }
 }
 @media only screen and (min-width: 1200px){
   .my-mr{
-   margin-left: 3.5% !important;
+   margin-left: 9% !important;
   }
 }
 @media only screen and (max-width: 767.98px){
@@ -49,9 +57,92 @@
 color: red;
 background: yellow;
 } 
-.hero-banner p{
-    margin-bottom: 1rem;
+.assistant p{
+  margin-bottom: 0;
 }
+.assistant p:first-child {
+  margin-bottom: 1.5rem;
+}
+.assistant p:last-of-type {
+  margin-bottom: 3rem;
+}
+.assistant a{
+  margin-bottom: 1rem;
+} 
+@media only screen and (max-width: 767.98px){
+  .assistant p:first-child span{
+  font-size: 24px !important;
+  }
+}
+.my-banner p{
+  margin-bottom: 0;
+}
+.my-banner p:last-of-type{
+  margin-bottom: 3rem;
+}
+.my-banner p a{
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 575px){
+  .play-video iframe{
+      width: 100%;
+  }
+}
+@media only screen and (min-width: 576px){
+  .play-video iframe{
+      width: 330px;
+      height: 353px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .play-video iframe{
+      width: 210px;
+      height: 225px;
+  }
+}
+@media only screen and (min-width: 992px){
+  .play-video iframe{
+      width: 290px;
+      height: 309px;
+  }
+}
+@media only screen and (min-width: 1200px){
+  .play-video iframe{
+      width: 350px;
+      height: 374px;
+  }
+}
+@media only screen and (max-width: 575px){
+  .play-video {
+      width: 100%;
+  }
+}
+@media only screen and (min-width: 576px){
+  .play-video {
+      width: 330px;
+      height: 353px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .play-video {
+      width: 210px;
+      height: 225px;
+  }
+}
+@media only screen and (min-width: 992px){
+  .play-video {
+      width: 290px;
+      height: 309px;
+  }
+}
+@media only screen and (min-width: 1200px){
+  .play-video {
+      width: 350px;
+      height: 374px;
+  }
+}
+
+
 
 
 /* fallback */

@@ -202,8 +202,8 @@
                     <?php the_field('t-text', $post->ID); ?>
                 </p>
                 <div class="pt-0 pt-lg-5 d-none d-md-block">
-                    <a href="#" class="btn btn-secondary btn-rounded mr-0 mr-md-4"><?php the_field('t-find', $post->ID); ?></a>
-                    <a href="#" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0"><?php the_field('t-call', $post->ID); ?></a>
+                    <a href="#" class="btn btn-secondary btn-rounded mr-0 mr-md-4 my-btn"><?php the_field('t-find', $post->ID); ?></a>
+                    <a href="#" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0 my-btn"><?php the_field('t-call', $post->ID); ?></a>
                 </div>
             </div>
             <div class="hero-image d-none d-md-block">
@@ -213,7 +213,7 @@
                 <img src="<?php the_field('t-image-mobile', $post->ID); ?>"/>
             </div>
             <div class="col-12 d-md-none justify-content-center text-center">
-                <a href="#" class="btn btn-lg btn-secondary btn-rounded"><?php the_field('t-find', $post->ID); ?></a>
+                <a href="#" class="btn btn-lg btn-secondary btn-rounded "><?php the_field('t-find', $post->ID); ?></a>
             </div>
         </div>
     </div>
@@ -279,34 +279,83 @@
         <?php the_field('use-text', $post->ID); ?>
         </p>
         <div class="row">
-            <div class="col-sm-12 col-md-4 mr-0-auto">
-                <a href="#" class="card card-video d-flex align-items-center my-5">
-                    <div class="video">
-                        <img class="video-thumbnail-placeholder" src="<?php the_field('video1-img', $post->ID); ?>" alt="Video">
-                        <button class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+
+            <div class="col-12 col-sm-8 col-md-4 mr-0-auto">
+                <a  class="card card-video d-flex align-items-center my-5">
+                    <div class="video" id="my-video1">
+                        <img id="my-video1-img" class="video-thumbnail-placeholder" src="<?php the_field('video1-img', $post->ID); ?>" alt="Video">
+                        <button id="my-video1-btn" class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                        <div id="play-video1" class="play-video d-none">
+                            <?php the_field('play-video-1', $post->ID); ?> 
+                        </div>
                     </div>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            $('#my-video1').click(function(){
+                                $('#my-video1-img').addClass('d-none');
+                                $('#my-video1-btn').addClass('d-none');
+                                $('#play-video1').removeClass('d-none');
+                                $('#play-video1 iframe')[0].src += "&autoplay=1";
+                                $("#play-video2 iframe").attr("src", $("#play-video2 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
+                                $("#play-video3 iframe").attr("src", $("#play-video3 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
+
+                            });
+                        });
+                    </script>
                     <div class="card-body">
                         <h5 class="card-title text-center"><?php the_field('video1', $post->ID); ?></h5>
                     </div>
                 </a>
             </div>
             <div class="col-sm-4 d-none d-md-block">
-                <a href="#" class="card card-video d-flex align-items-center my-5">
-                    <div class="video">
-                        <img class="video-thumbnail-placeholder" src="<?php the_field('video2-img', $post->ID); ?>" alt="Video">
-                        <button class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                <a class="card card-video d-flex align-items-center my-5">
+                    <div class="video" id="my-video2">
+                        <img id="my-video2-img" class="video-thumbnail-placeholder" src="<?php the_field('video2-img', $post->ID); ?>" alt="Video">
+                        <button id="my-video2-btn" class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                        <div id="play-video2" class="play-video d-none">
+                            <?php the_field('play-video-2', $post->ID); ?> 
+                        </div>
                     </div>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            $('#my-video2').click(function(){
+                                $('#my-video2-img').addClass('d-none');
+                                $('#my-video2-btn').addClass('d-none');
+                                $('#play-video2').removeClass('d-none');
+                                $('#play-video2 iframe')[0].src += "&autoplay=1";
+                                $("#play-video1 iframe").attr("src", $("#play-video1 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
+                                $("#play-video3 iframe").attr("src", $("#play-video3 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
+
+                            });
+                        });
+                    </script>
                     <div class="card-body">
                         <h5 class="card-title text-center"><?php the_field('video2', $post->ID); ?></h5>
                     </div>
                 </a>
             </div>
             <div class="col-sm-4 d-none d-md-block">
-                <a href="#" class="card card-video d-flex align-items-center my-5">
-                    <div class="video">
-                        <img class="video-thumbnail-placeholder" src="<?php the_field('video3-img', $post->ID); ?>" alt="Video">
-                        <button class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                <a class="card card-video d-flex align-items-center my-5">
+                    <div class="video" id="my-video3">
+                        <img id="my-video3-img" class="video-thumbnail-placeholder" src="<?php the_field('video3-img', $post->ID); ?>" alt="Video">
+                        <button id="my-video3-btn" class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                        <div id="play-video3" class="play-video d-none">
+                            <?php the_field('play-video-3', $post->ID); ?> 
+                        </div>
                     </div>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            $('#my-video3').click(function(){
+                                $('#my-video3-img').addClass('d-none');
+                                $('#my-video3-btn').addClass('d-none');
+                                $('#play-video3').removeClass('d-none');
+                                $('#play-video3 iframe')[0].src += "&autoplay=1";
+                                $("#play-video2 iframe").attr("src", $("#play-video2 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
+                                $("#play-video1 iframe").attr("src", $("#play-video1 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
+
+                            });
+                        });
+                    </script>
                     <div class="card-body">
                         <h5 class="card-title text-center"><?php the_field('video3', $post->ID); ?></h5>
                     </div>

@@ -11,7 +11,7 @@
 <?php  get_header(); ?>
 
 <div class="page-about">
-    <section class="hero-banner bg-primary text-light">
+    <section class="hero-banner bg-primary text-light my-banner">
     <div class="container text-center">
         <h1 class="text-light mt-5 pt-5 pb-4">
             <strong><?php the_field('ct-mytitle', $post->ID); ?></strong>
@@ -29,7 +29,7 @@
 </section>    <section class="contact my-5 mt-lg-4" id="contact">
     <div class="container content-center">
         <div class="row justify-content-around my-mr">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
                     <div class="media-body">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="Location">
                     <div class="media-body">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="Location">
                     <div class="media-body">

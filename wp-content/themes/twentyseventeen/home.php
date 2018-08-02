@@ -56,8 +56,7 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-location', $post->ID); ?></strong></h5>
-                        <small><?php the_field('c-location-text', $post->ID); ?></small>
+                        <?php the_field('c-location-text', $post->ID); ?>
                     </div>
                 </div>
             </div>
@@ -65,8 +64,7 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-email', $post->ID); ?></strong></h5>
-                        <small><?php the_field('c-email-text', $post->ID); ?></small>
+                       <?php the_field('c-email-text', $post->ID); ?>
                     </div>
                 </div>
             </div>
@@ -74,8 +72,7 @@
                 <div class="media media-contact mb-4 mb-md-0">
                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="Location">
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><strong><?php the_field('c-call', $post->ID); ?></strong></h5>
-                        <small><?php the_field('c-call-text', $post->ID); ?></small>
+                       <?php the_field('c-call-text', $post->ID); ?>
                     </div>
                 </div>
             </div>
@@ -278,30 +275,18 @@
         <p class="section-description text-center">
         <?php the_field('use-text', $post->ID); ?>
         </p>
-        <div class="row">
+        <div class="row div-video">
 
             <div class="col-12 col-sm-8 col-md-4 mr-0-auto">
-                <a  class="card card-video d-flex align-items-center my-5">
-                    <div class="video" id="my-video1">
-                        <img id="my-video1-img" class="video-thumbnail-placeholder" src="<?php the_field('video1-img', $post->ID); ?>" alt="Video">
-                        <button id="my-video1-btn" class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
-                        <div id="play-video1" class="play-video d-none">
+                <a class="card card-video d-flex align-items-center my-5">
+                    <div class="video" >
+                        <img class="video-thumbnail-placeholder" src="<?php the_field('video1-img', $post->ID); ?>" alt="Video">
+                        <button class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                        <div  class="play-video d-none">
                             <?php the_field('play-video-1', $post->ID); ?> 
                         </div>
                     </div>
-                    <script type="text/javascript">
-                        $(document).ready(function(){
-                            $('#my-video1').click(function(){
-                                $('#my-video1-img').addClass('d-none');
-                                $('#my-video1-btn').addClass('d-none');
-                                $('#play-video1').removeClass('d-none');
-                                $('#play-video1 iframe')[0].src += "&autoplay=1";
-                                $("#play-video2 iframe").attr("src", $("#play-video2 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
-                                $("#play-video3 iframe").attr("src", $("#play-video3 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
-
-                            });
-                        });
-                    </script>
+                    
                     <div class="card-body">
                         <h5 class="card-title text-center"><?php the_field('video1', $post->ID); ?></h5>
                     </div>
@@ -309,26 +294,14 @@
             </div>
             <div class="col-sm-4 d-none d-md-block">
                 <a class="card card-video d-flex align-items-center my-5">
-                    <div class="video" id="my-video2">
-                        <img id="my-video2-img" class="video-thumbnail-placeholder" src="<?php the_field('video2-img', $post->ID); ?>" alt="Video">
-                        <button id="my-video2-btn" class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
-                        <div id="play-video2" class="play-video d-none">
+                    <div class="video">
+                        <img class="video-thumbnail-placeholder" src="<?php the_field('video2-img', $post->ID); ?>" alt="Video">
+                        <button class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                        <div  class="play-video d-none">
                             <?php the_field('play-video-2', $post->ID); ?> 
                         </div>
                     </div>
-                    <script type="text/javascript">
-                        $(document).ready(function(){
-                            $('#my-video2').click(function(){
-                                $('#my-video2-img').addClass('d-none');
-                                $('#my-video2-btn').addClass('d-none');
-                                $('#play-video2').removeClass('d-none');
-                                $('#play-video2 iframe')[0].src += "&autoplay=1";
-                                $("#play-video1 iframe").attr("src", $("#play-video1 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
-                                $("#play-video3 iframe").attr("src", $("#play-video3 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
-
-                            });
-                        });
-                    </script>
+                   
                     <div class="card-body">
                         <h5 class="card-title text-center"><?php the_field('video2', $post->ID); ?></h5>
                     </div>
@@ -336,26 +309,14 @@
             </div>
             <div class="col-sm-4 d-none d-md-block">
                 <a class="card card-video d-flex align-items-center my-5">
-                    <div class="video" id="my-video3">
-                        <img id="my-video3-img" class="video-thumbnail-placeholder" src="<?php the_field('video3-img', $post->ID); ?>" alt="Video">
-                        <button id="my-video3-btn" class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
-                        <div id="play-video3" class="play-video d-none">
+                    <div class="video" >
+                        <img  class="video-thumbnail-placeholder" src="<?php the_field('video3-img', $post->ID); ?>" alt="Video">
+                        <button  class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                        <div  class="play-video d-none">
                             <?php the_field('play-video-3', $post->ID); ?> 
                         </div>
                     </div>
-                    <script type="text/javascript">
-                        $(document).ready(function(){
-                            $('#my-video3').click(function(){
-                                $('#my-video3-img').addClass('d-none');
-                                $('#my-video3-btn').addClass('d-none');
-                                $('#play-video3').removeClass('d-none');
-                                $('#play-video3 iframe')[0].src += "&autoplay=1";
-                                $("#play-video2 iframe").attr("src", $("#play-video2 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
-                                $("#play-video1 iframe").attr("src", $("#play-video1 iframe").attr("src").replace("autoplay=1", "autoplay=0"));
-
-                            });
-                        });
-                    </script>
+                    
                     <div class="card-body">
                         <h5 class="card-title text-center"><?php the_field('video3', $post->ID); ?></h5>
                     </div>
@@ -417,3 +378,96 @@
 </div></div>
 
  <?php  get_footer(); ?>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.div-video .video').click(function(){
+
+            $('.div-video .playing').children('.video-thumbnail-placeholder').removeClass('d-none');
+            $('.div-video .playing').children('.play-button').removeClass('d-none');
+            $('.div-video .playing').children('.play-video').addClass('d-none');
+            
+            var t = "";
+            t = t + $('.div-video .playing').children('.play-video').children('iframe').attr("src");
+            
+             t = t.replace("&autoplay=1","");
+            
+            $('.div-video .playing').children('.play-video').children('iframe').attr("src", t);
+
+            $('.div-video .playing').removeClass('playing');
+            
+
+            $(this).addClass('playing');
+            $(this).children('.video-thumbnail-placeholder').addClass('d-none');
+            $(this).children('.play-button').addClass('d-none');
+            $(this).children('.play-video').removeClass('d-none');
+
+            $(this).children('.play-video').children('iframe')[0].src += "&autoplay=1";
+
+            
+        });
+    });
+</script>
+<!--  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#my-video1').click(function(){
+            $('#my-video1-img').addClass('d-none');
+            $('#my-video1-btn').addClass('d-none');
+            $('#play-video1').removeClass('d-none');
+            $('#play-video1 iframe')[0].src += "&autoplay=1";
+
+            if($('#my-video2-img').hasClass('d-none')){
+                $('#my-video2-img').removeClass('d-none');
+                $('#my-video2-btn').removeClass('d-none');
+                $('#play-video2').addClass('d-none');
+                $("#play-video2 iframe").attr("src", $("#play-video2 iframe").attr("src").replace("autoplay=1", ""));
+            }
+
+            if($('#my-video3-img').hasClass('d-none')){
+                $('#my-video3-img').removeClass('d-none');
+                $('#my-video3-btn').removeClass('d-none');
+                $('#play-video3').addClass('d-none');
+                $("#play-video3 iframe").attr("src", $("#play-video3 iframe").attr("src").replace("autoplay=1", ""));
+            }
+        });
+        $('#my-video2').click(function(){
+            $('#my-video2-img').addClass('d-none');
+            $('#my-video2-btn').addClass('d-none');
+            $('#play-video2').removeClass('d-none');
+            $('#play-video2 iframe')[0].src += "&autoplay=1";
+
+            if($('#my-video1-img').hasClass('d-none')){
+                $('#my-video1-img').removeClass('d-none');
+                $('#my-video1-btn').removeClass('d-none');
+                $('#play-video1').addClass('d-none');
+                $("#play-video1 iframe").attr("src", $("#play-video1 iframe").attr("src").replace("autoplay=1", ""));
+            }
+            if($('#my-video3-img').hasClass('d-none')){
+                $('#my-video3-img').removeClass('d-none');
+                $('#my-video3-btn').removeClass('d-none');
+                $('#play-video3').addClass('d-none');
+                $("#play-video3 iframe").attr("src", $("#play-video3 iframe").attr("src").replace("autoplay=1", ""));
+            }
+            
+        });
+        $('#my-video3').click(function(){
+            $('#my-video3-img').addClass('d-none');
+            $('#my-video3-btn').addClass('d-none');
+            $('#play-video3').removeClass('d-none');
+            $('#play-video3 iframe')[0].src += "&autoplay=1";
+
+            if($('#my-video1-img').hasClass('d-none')){
+                $('#my-video1-img').removeClass('d-none');
+                $('#my-video1-btn').removeClass('d-none');
+                $('#play-video1').addClass('d-none');
+                $("#play-video1 iframe").attr("src", $("#play-video1 iframe").attr("src").replace("autoplay=1", ""));
+            }
+            if($('#my-video2-img').hasClass('d-none')){
+                $('#my-video2-img').removeClass('d-none');
+                $('#my-video2-btn').removeClass('d-none');
+                $('#play-video2').addClass('d-none');
+                $("#play-video2 iframe").attr("src", $("#play-video2 iframe").attr("src").replace("autoplay=1", ""));
+            }
+        });
+    });
+</script> -->

@@ -13,9 +13,6 @@
 <div class="page-about">
     <section class="hero-banner bg-primary text-light my-banner">
     <div class="container text-center">
-        <h1 class="text-light mt-5 pt-5 pb-4">
-            <strong><?php the_field('ct-mytitle', $post->ID); ?></strong>
-        </h1>
         <?php the_field('ct-editor', $post->ID); ?>
         <div class="row text-center justify-content-center">
             <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/arrow-down.png" /></a>
@@ -31,7 +28,7 @@
         <div class="row justify-content-around my-mr">
             <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
+                    <img class="mr-2" src="<?php the_field('cc-location', $post->ID); ?>" alt="Location">
                     <div class="media-body">
                       <?php the_field('c-location-text', $post->ID); ?>
                     </div>
@@ -39,7 +36,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="Location">
+                    <img class="mr-2" src="<?php the_field('cc-email', $post->ID); ?>" alt="email">
                     <div class="media-body">
                       <?php the_field('c-email-text', $post->ID); ?>
                     </div>
@@ -47,7 +44,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="Location">
+                    <img class="mr-2" src="<?php the_field('cc-call', $post->ID); ?>" alt="call">
                     <div class="media-body">
                       <?php the_field('c-call-text', $post->ID); ?>
                     </div>

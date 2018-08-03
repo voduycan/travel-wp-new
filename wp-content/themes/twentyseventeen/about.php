@@ -79,6 +79,7 @@
 				$text = get_sub_field('bn-text');
 
 				?>
+                <?php if($logo || $number || $sup || $text): ?>
 	            <div class="col-6 col-md-4 mb-5">
 	                <div class="statistic text-center">
 	                    <div class="number">
@@ -91,6 +92,7 @@
 	                    <div class="text text-black-50 px-0 px-lg-5"><?php echo $text; ?></div>
 	                </div>
 	            </div>
+                <?php endif; ?>
 			<?php endwhile; ?>
 		</div>
 		<?php endif; ?>
@@ -115,17 +117,19 @@
 				$text = get_sub_field('why-text');
 
 				?>
-	            <div class="col-12 col-lg-6">
-	                <div class="media media-why mb-4 mb-md-0 mt-4">
-	                    <img class="mr-3" src="<?php echo $logo; ?>" alt="Why use Travelward">
-	                    <div class="media-body">
-	                        <h5 class="mt-0 mb-1"><strong><?php echo $title; ?></strong></h5>
-	                        <p>
-	                            <?php echo $text; ?>
-	                        </p>
-	                    </div>
-	                </div>
-	            </div>
+                <?php if($logo || $title || $text): ?>
+    	            <div class="col-12 col-lg-6">
+    	                <div class="media media-why mb-4 mb-md-0 mt-4">
+    	                    <img class="mr-3" src="<?php echo $logo; ?>" alt="Why use Travelward">
+    	                    <div class="media-body">
+    	                        <h5 class="mt-0 mb-1"><strong><?php echo $title; ?></strong></h5>
+    	                        <p>
+    	                            <?php echo $text; ?>
+    	                        </p>
+    	                    </div>
+    	                </div>
+    	            </div>
+                <?php endif; ?> 
         	<?php endwhile; ?>  
     	</div>
         <?php endif; ?>	  

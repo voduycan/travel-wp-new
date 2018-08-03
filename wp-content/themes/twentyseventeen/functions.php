@@ -20,7 +20,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 // Customize mce editor font sizes
 if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
     function wpex_mce_text_sizes( $initArray ){
-        $initArray['fontsize_formats'] = "9px 10px 11px 12px 13px 14px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 27px 28px 29px 30px 31px 32px 36px 37px 38px 39px 40px 41px 42px 43px 44px 45px 50px 55px 60px 65px 70px 75px 80px 85px 90px";
+        $initArray['fontsize_formats'] = "9px 10px 11px 12px 13px 14px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 27px 28px 29px 30px 31px 32px 36px 37px 38px 39px 40px 41px 42px 43px 44px 45px 46px 47px 48px 49px 50px 55px 60px 65px 70px 75px 80px 85px 90px";
         return $initArray;
     }
 }

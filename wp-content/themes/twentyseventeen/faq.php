@@ -12,9 +12,6 @@
 <div class="page-faq">
     <section class="hero-banner bg-primary text-light my-banner">
     <div class="container text-center">
-        <h1 class="text-light  mt-5 pt-5 pb-4">
-            <strong><?php the_field('fc-title', $post->ID); ?></strong>
-        </h1>
         <?php the_field('faq-editor', $post->ID); ?>
         <div class="row text-center justify-content-center">
             <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/arrow-down.png"/></a>

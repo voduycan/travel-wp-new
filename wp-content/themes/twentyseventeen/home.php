@@ -54,7 +54,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
+                    <img class="mr-2" src="<?php the_field('hc-location', $post->ID); ?>" alt="Location">
                     <div class="media-body">
                         <?php the_field('c-location-text', $post->ID); ?>
                     </div>
@@ -62,7 +62,7 @@
             </div>
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="Location">
+                    <img class="mr-2" src="<?php the_field('hc-email', $post->ID); ?>" alt="Location">
                     <div class="media-body">
                        <?php the_field('c-email-text', $post->ID); ?>
                     </div>
@@ -70,7 +70,7 @@
             </div>
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="Location">
+                    <img class="mr-2" src="<?php the_field('hc-call', $post->ID); ?>" alt="Location">
                     <div class="media-body">
                        <?php the_field('c-call-text', $post->ID); ?>
                     </div>
@@ -200,7 +200,7 @@
                 </p>
                 <div class="pt-0 pt-lg-5 d-none d-md-block">
                     <a href="#" class="btn btn-secondary btn-rounded mr-0 mr-md-4 my-btn"><?php the_field('t-find', $post->ID); ?></a>
-                    <a href="#" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0 my-btn"><?php the_field('t-call', $post->ID); ?></a>
+                    <a href="#" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0"><?php the_field('t-call', $post->ID); ?></a>
                 </div>
             </div>
             <div class="hero-image d-none d-md-block">

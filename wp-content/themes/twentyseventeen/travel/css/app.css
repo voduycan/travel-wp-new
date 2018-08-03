@@ -24,7 +24,7 @@
     outline: none;
 }
 .my-btn{
-  width: 205px;
+  border-width: 2px;
 }
 .mr-0-auto{
   margin: 0 auto;
@@ -66,6 +66,9 @@ background: yellow;
 .assistant p:last-of-type {
   margin-bottom: 3rem;
 }
+.assistant p:nth-child(3) {
+  margin-bottom: -6px;
+}
 .assistant a{
   margin-bottom: 1rem;
 } 
@@ -74,11 +77,23 @@ background: yellow;
   font-size: 24px !important;
   }
 }
+
+@media only screen and (max-width: 767.98px){
+  .my-banner p:first-child span{
+  font-size: 32px !important;
+  }
+}
 .my-banner p{
   margin-bottom: 0;
 }
+.my-banner p:first-child{
+  margin-bottom: 1.5rem;
+}
 .my-banner p:last-of-type{
   margin-bottom: 3rem;
+}
+.my-banner p:nth-child(3){
+  margin-bottom: -6px;
 }
 .my-banner p a{
   margin-bottom: 1rem;
@@ -2512,7 +2527,7 @@ pre code {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0.75rem !important;
   font-size: 0.9rem;
   line-height: 1.6;
   color: #495057;
@@ -13987,7 +14002,7 @@ html[xmlns] .flexslider .slides {
   line-height: 1.5;   
 }
 .contact .media-contact > img {
-  width: 32px;
+  width: 44px;
   height: auto;
 }
 

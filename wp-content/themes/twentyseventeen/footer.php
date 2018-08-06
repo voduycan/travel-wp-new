@@ -58,10 +58,10 @@
 		                    </div>
 
 		                    <div class="text-left text-md-right mt-2 mt-md-0">
-		                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('twitter', 'options'); ?>" class="mr-b-2 social-icon"/></a>
-		                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('instagram', 'options'); ?>" class="mr-b-2 social-icon"/></a>
-		                        <a href="#" class="social-icon mr-2"><img src="<?php echo the_field('linkedin', 'options'); ?>" class="mr-b-2 social-icon"/></a>
-		                        <a href="#" class="social-icon"><img src="<?php echo the_field('facebook', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+		                        <a target="_blank" href="<?php the_field('link-twitter', 'options'); ?>" class="social-icon mr-2"><img src="<?php the_field('twitter', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+		                        <a target="_blank" href="<?php the_field('link-instagram', 'options'); ?>" class="social-icon mr-2"><img src="<?php the_field('instagram', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+		                        <a target="_blank" href="<?php the_field('link-linkedin', 'options'); ?>" class="social-icon mr-2"><img src="<?php the_field('linkedin', 'options'); ?>" class="mr-b-2 social-icon"/></a>
+		                        <a target="_blank" href="<?php the_field('link-facebook', 'options'); ?>" class="social-icon"><img src="<?php the_field('facebook', 'options'); ?>" class="mr-b-2 social-icon"/></a>
 		                    </div>
 		                </div>
                     </div>

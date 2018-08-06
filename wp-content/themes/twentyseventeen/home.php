@@ -41,9 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8 col-sm-6 d-block d-md-none">
-                <a href="#" class="btn btn-secondary btn-rounded btn-block btn-lg"><?php the_field('sign-up-today', $post->ID); ?></a>
-            </div>
+            
         </div>
     </div>
     <div class="divider">
@@ -85,7 +83,7 @@
                     }
                  ?>
                 <button class="btn btn-lg btn-outline-primary btn-rounded mt-4 mt-lg-2 contact-button">
-                    <a href="<?php echo $link; ?>"><?php the_field('c-btn', $post->ID); ?></a>
+                    <a target="_blank" href="<?php echo $link; ?>"><?php the_field('c-btn', $post->ID); ?></a>
                 </button>
             </div>
         </div>
@@ -132,7 +130,7 @@
             <div class="col-12 col-md-6">
                 <h3><strong><?php the_field('own-title', $post->ID); ?></strong></h3>
                 <p class="my-5">
-                    <strong><?php the_field('own-strong', $post->ID); ?></strong> <?php the_field('own-normal', $post->ID); ?>
+                    <?php the_field('own-normal', $post->ID); ?>
                 </p>
                 <div class="d-md-none">
                     <img src="<?php bloginfo('template_url'); ?>/travel/assets/macbook.png"/>
@@ -208,9 +206,9 @@
                     <?php the_field('t-text', $post->ID); ?>
                 </p>
                 <div class="pt-0 pt-lg-5 d-none d-md-block">
-                    <a href="<?php the_field('ht-link1', $post->ID); ?>" class="btn btn-secondary btn-rounded mr-0 mr-md-4 my-btn"><?php the_field('t-find', $post->ID); ?></a>
+                    <a target="_blank" href="<?php the_field('ht-link1', $post->ID); ?>" class="btn btn-secondary btn-rounded mr-0 mr-md-4 my-btn"><?php the_field('t-find', $post->ID); ?></a>
 
-                    <a href="<?php echo "tel:"; the_field('ht-link2', $post->ID); ?>" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0"><?php the_field('t-call', $post->ID); ?></a>
+                    <a target="_blank" href="<?php echo "tel:"; the_field('ht-link2', $post->ID); ?>" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0"><?php the_field('t-call', $post->ID); ?></a>
                 </div>
             </div>
             <div class="hero-image d-none d-md-block">
@@ -220,7 +218,7 @@
                 <img src="<?php the_field('t-image-mobile', $post->ID); ?>"/>
             </div>
             <div class="col-12 d-md-none justify-content-center text-center">
-                <a href="#" class="btn btn-lg btn-secondary btn-rounded "><?php the_field('t-find', $post->ID); ?></a>
+                <a target="_blank" href="#" class="btn btn-lg btn-secondary btn-rounded "><?php the_field('t-find', $post->ID); ?></a>
             </div>
         </div>
     </div>
@@ -271,7 +269,7 @@
             <div class="col-12">
                 <div class="p-5 bg-light text-center">
                 <img class="trust-you-image" src="<?php bloginfo('template_url'); ?>/travel/assets/trust-you.svg" alt="Trust You">
-                <p><?php the_field('trust', $post->ID); ?></p>
+                <p><?php the_field('trust-text', $post->ID); ?></p>
                 </div>
             </div> 
         </div>
@@ -285,56 +283,39 @@
         <p class="section-description text-center">
         <?php the_field('use-text', $post->ID); ?>
         </p>
-        <div class="row div-video">
+       
 
-            <div class="col-12 col-sm-8 col-md-4 mr-0-auto">
-                <a class="card card-video d-flex align-items-center my-5">
-                    <div class="video" >
-                        <img class="video-thumbnail-placeholder" src="<?php the_field('video1-img', $post->ID); ?>" alt="Video">
-                        <button class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
-                        <div  class="play-video d-none">
-                            <?php the_field('play-video-1', $post->ID); ?> 
-                        </div>
+        <?php if( have_rows('add-video') ): ?>
+            <div class="row div-video" id="list-video">
+                <?php while( have_rows('add-video') ): the_row(); 
+
+                // vars
+                $image = get_sub_field('video-image');
+                $title = get_sub_field('video-title');
+                $link = get_sub_field('url-video');
+
+                ?>    
+                    <div class="col-sm-4 d-none d-md-block">
+                        <a class="card card-video d-flex align-items-center my-5">
+                            <div class="video">
+                                <img class="video-thumbnail-placeholder" src="<?php echo $image; ?>" alt="Video">
+                                <button class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
+                                <div  class="play-video d-none">
+                                    <?php echo $link; ?> 
+                                </div>
+                            </div>
+                           
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><?php echo $title; ?></h5>
+                            </div>
+                        </a>
                     </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title text-center"><?php the_field('video1', $post->ID); ?></h5>
-                    </div>
-                </a>
+                <?php endwhile; ?>
             </div>
-            <div class="col-sm-4 d-none d-md-block">
-                <a class="card card-video d-flex align-items-center my-5">
-                    <div class="video">
-                        <img class="video-thumbnail-placeholder" src="<?php the_field('video2-img', $post->ID); ?>" alt="Video">
-                        <button class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
-                        <div  class="play-video d-none">
-                            <?php the_field('play-video-2', $post->ID); ?> 
-                        </div>
-                    </div>
-                   
-                    <div class="card-body">
-                        <h5 class="card-title text-center"><?php the_field('video2', $post->ID); ?></h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-4 d-none d-md-block">
-                <a class="card card-video d-flex align-items-center my-5">
-                    <div class="video" >
-                        <img  class="video-thumbnail-placeholder" src="<?php the_field('video3-img', $post->ID); ?>" alt="Video">
-                        <button  class="play-button"><img src="<?php bloginfo('template_url'); ?>/travel/assets/play-button.svg" alt="Play"></button>
-                        <div  class="play-video d-none">
-                            <?php the_field('play-video-3', $post->ID); ?> 
-                        </div>
-                    </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title text-center"><?php the_field('video3', $post->ID); ?></h5>
-                    </div>
-                </a>
-            </div>
-        </div>
+        <?php endif; ?>            
+        
         <div class="row justify-content-center">
-            <a href="<?php the_field('browse-link', $post->ID); ?>" class="btn btn-primary btn-rounded browse-video"><?php the_field('browse-video', $post->ID); ?></a>
+            <a target="_blank" href="<?php the_field('browse-link', $post->ID); ?>" class="btn btn-primary btn-rounded browse-video"><?php the_field('browse-video', $post->ID); ?></a>
         </div>
     </div>
     <div class="divider">
@@ -381,7 +362,7 @@
         <div class="row">
             <div class="col-sm-12 d-flex align-items-center justify-content-center">
                 <h4 class="m-0 mr-2 p-0"><?php the_field('question', $post->ID); ?></h4>
-                <a href="<?php echo "tel:"; the_field('hf-link', $post->ID); ?>" class="btn btn-outline-primary btn-rounded"><?php the_field('request', $post->ID); ?></a>
+                <a target="_blank" href="<?php echo "tel:"; the_field('hf-link', $post->ID); ?>" class="btn btn-outline-primary btn-rounded"><?php the_field('request', $post->ID); ?></a>
             </div>
         </div>
     </div>
@@ -418,66 +399,9 @@
         });
     });
 </script>
-<!--  <script type="text/javascript">
+ <script type="text/javascript">
     $(document).ready(function(){
-        $('#my-video1').click(function(){
-            $('#my-video1-img').addClass('d-none');
-            $('#my-video1-btn').addClass('d-none');
-            $('#play-video1').removeClass('d-none');
-            $('#play-video1 iframe')[0].src += "&autoplay=1";
-
-            if($('#my-video2-img').hasClass('d-none')){
-                $('#my-video2-img').removeClass('d-none');
-                $('#my-video2-btn').removeClass('d-none');
-                $('#play-video2').addClass('d-none');
-                $("#play-video2 iframe").attr("src", $("#play-video2 iframe").attr("src").replace("autoplay=1", ""));
-            }
-
-            if($('#my-video3-img').hasClass('d-none')){
-                $('#my-video3-img').removeClass('d-none');
-                $('#my-video3-btn').removeClass('d-none');
-                $('#play-video3').addClass('d-none');
-                $("#play-video3 iframe").attr("src", $("#play-video3 iframe").attr("src").replace("autoplay=1", ""));
-            }
-        });
-        $('#my-video2').click(function(){
-            $('#my-video2-img').addClass('d-none');
-            $('#my-video2-btn').addClass('d-none');
-            $('#play-video2').removeClass('d-none');
-            $('#play-video2 iframe')[0].src += "&autoplay=1";
-
-            if($('#my-video1-img').hasClass('d-none')){
-                $('#my-video1-img').removeClass('d-none');
-                $('#my-video1-btn').removeClass('d-none');
-                $('#play-video1').addClass('d-none');
-                $("#play-video1 iframe").attr("src", $("#play-video1 iframe").attr("src").replace("autoplay=1", ""));
-            }
-            if($('#my-video3-img').hasClass('d-none')){
-                $('#my-video3-img').removeClass('d-none');
-                $('#my-video3-btn').removeClass('d-none');
-                $('#play-video3').addClass('d-none');
-                $("#play-video3 iframe").attr("src", $("#play-video3 iframe").attr("src").replace("autoplay=1", ""));
-            }
-            
-        });
-        $('#my-video3').click(function(){
-            $('#my-video3-img').addClass('d-none');
-            $('#my-video3-btn').addClass('d-none');
-            $('#play-video3').removeClass('d-none');
-            $('#play-video3 iframe')[0].src += "&autoplay=1";
-
-            if($('#my-video1-img').hasClass('d-none')){
-                $('#my-video1-img').removeClass('d-none');
-                $('#my-video1-btn').removeClass('d-none');
-                $('#play-video1').addClass('d-none');
-                $("#play-video1 iframe").attr("src", $("#play-video1 iframe").attr("src").replace("autoplay=1", ""));
-            }
-            if($('#my-video2-img').hasClass('d-none')){
-                $('#my-video2-img').removeClass('d-none');
-                $('#my-video2-btn').removeClass('d-none');
-                $('#play-video2').addClass('d-none');
-                $("#play-video2 iframe").attr("src", $("#play-video2 iframe").attr("src").replace("autoplay=1", ""));
-            }
-        });
+       $('#list-video > div').eq(0).removeClass('col-sm-4 d-none d-md-block');
+       $('#list-video > div').eq(0).addClass('col-12 col-sm-8 col-md-4 mr-0-auto');
     });
-</script> -->
+</script>

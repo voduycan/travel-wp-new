@@ -45,11 +45,7 @@
             
 
             <ul class="navbar-nav" id="main_nav">
-                <?php if (!is_user_logged_in()): ?>
-                    <li class="nav-item">
-                        <a class="nav-link d-block d-md-none my-3 text-secondary" href="#">SIGN IN</a>
-                    </li>
-                <?php endif; ?>
+                
             <?php 
                  $menuLocations = get_nav_menu_locations(); 
                  $menuID = $menuLocations['main-nav']; 
@@ -69,23 +65,8 @@
                             <a class="nav-link" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a> 
 
                         </li>';
-                     
                 }
              ?>
-    
-            
-
-
-                <!-- <li class="nav-item dropdown  d-none d-md-block d-xl-none px-3">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php the_field('more', 'options'); ?>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right px-4" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item d-block d-xl-none p-3" href="travelwards/faq"><?php the_field('faqs', 'options'); ?></a>
-                        <a class="dropdown-item d-block d-xl-none p-3" href="travelwards/contact"><?php the_field('contact-us', 'options'); ?></a>
-                    </div>
-                </li> -->
-
                 <li class="nav-item d-lg-block">
                     <a class="nav-link" href="<?php echo "tel:"; the_field('header-call', 'options'); ?>">
                         <img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone-outline.svg" class="mr-1"/>
@@ -93,8 +74,6 @@
                     </a>
                 </li>
             </ul>
-
-
         </div>
     </div>
 </nav> 

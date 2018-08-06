@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-8 col-sm-6 d-block d-md-none">
-                <a href="#" class="btn btn-secondary btn-rounded btn-block btn-lg">SIGN UP TODAY</a>
+                <a href="#" class="btn btn-secondary btn-rounded btn-block btn-lg"><?php the_field('sign-up-today', $post->ID); ?></a>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-2" src="<?php the_field('hc-location', $post->ID); ?>" alt="Location">
+                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
                     <div class="media-body">
                         <?php the_field('c-location-text', $post->ID); ?>
                     </div>
@@ -62,7 +62,7 @@
             </div>
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-2" src="<?php the_field('hc-email', $post->ID); ?>" alt="Location">
+                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="email">
                     <div class="media-body">
                        <?php the_field('c-email-text', $post->ID); ?>
                     </div>
@@ -70,14 +70,23 @@
             </div>
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-2" src="<?php the_field('hc-call', $post->ID); ?>" alt="Location">
+                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="call">
                     <div class="media-body">
                        <?php the_field('c-call-text', $post->ID); ?>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center">
-                <button class="btn btn-lg btn-outline-primary btn-rounded mt-4 mt-lg-2 contact-button"><?php the_field('c-btn', $post->ID); ?></button>
+                <?php 
+                    $link = get_field('hc-link', $post->ID);
+                    if(strpos($link, "@")){
+                        $t = "mailto:" .$link;
+                        $link = $t;
+                    }
+                 ?>
+                <button class="btn btn-lg btn-outline-primary btn-rounded mt-4 mt-lg-2 contact-button">
+                    <a href="<?php echo $link; ?>"><?php the_field('c-btn', $post->ID); ?></a>
+                </button>
             </div>
         </div>
     </div>
@@ -199,8 +208,9 @@
                     <?php the_field('t-text', $post->ID); ?>
                 </p>
                 <div class="pt-0 pt-lg-5 d-none d-md-block">
-                    <a href="#" class="btn btn-secondary btn-rounded mr-0 mr-md-4 my-btn"><?php the_field('t-find', $post->ID); ?></a>
-                    <a href="#" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0"><?php the_field('t-call', $post->ID); ?></a>
+                    <a href="<?php the_field('ht-link1', $post->ID); ?>" class="btn btn-secondary btn-rounded mr-0 mr-md-4 my-btn"><?php the_field('t-find', $post->ID); ?></a>
+
+                    <a href="<?php echo "tel:"; the_field('ht-link2', $post->ID); ?>" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0"><?php the_field('t-call', $post->ID); ?></a>
                 </div>
             </div>
             <div class="hero-image d-none d-md-block">
@@ -228,7 +238,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card card-feature d-flex align-items-center my-2 my-md-5" data-aos="fade-up">
-                    <img class="card-img-top" src="<?php the_field('h-card1-img', $post->ID); ?>" alt="Wholesalers">
+                    <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/search.svg" alt="Wholesalers">
                     <div class="card-body">
                         <h4 class="card-title text-center"><strong><?php the_field('h-card1-title', $post->ID); ?></strong></h4>
                         <p class="text-center"><?php the_field('h-card1-text', $post->ID); ?></p>
@@ -237,7 +247,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="card card-feature d-flex align-items-center my-2 my-md-5" data-aos="fade-up" data-aos-delay="500">
-                    <img class="card-img-top" src="<?php the_field('h-card2-img', $post->ID); ?>" alt="Wholesalers">
+                    <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/set.svg" alt="Wholesalers">
                     <div class="card-body">
                         <h4 class="card-title text-center"><strong><?php the_field('h-card2-title', $post->ID); ?></strong></h4>
                         <p class="text-center"><?php the_field('h-card2-text', $post->ID); ?></p>
@@ -246,7 +256,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="card card-feature d-flex align-items-center my-2 my-md-5" data-aos="fade-up" data-aos-delay="1000">
-                    <img class="card-img-top" src="<?php the_field('h-card3-img', $post->ID); ?>" alt="Wholesalers">
+                    <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/send.svg" alt="Wholesalers">
                     <div class="card-body">
                         <h4 class="card-title text-center"><strong><?php the_field('h-card3-title', $post->ID); ?></strong></h4>
                         <p class="text-center"><?php the_field('h-card3-text', $post->ID); ?></p>
@@ -324,7 +334,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <a href="#" class="btn btn-primary btn-rounded browse-video"><?php the_field('browse-video', $post->ID); ?></a>
+            <a href="<?php the_field('browse-link', $post->ID); ?>" class="btn btn-primary btn-rounded browse-video"><?php the_field('browse-video', $post->ID); ?></a>
         </div>
     </div>
     <div class="divider">
@@ -371,7 +381,7 @@
         <div class="row">
             <div class="col-sm-12 d-flex align-items-center justify-content-center">
                 <h4 class="m-0 mr-2 p-0"><?php the_field('question', $post->ID); ?></h4>
-                <a href="#" class="btn btn-outline-primary btn-rounded"><?php the_field('request', $post->ID); ?></a>
+                <a href="<?php echo "tel:"; the_field('hf-link', $post->ID); ?>" class="btn btn-outline-primary btn-rounded"><?php the_field('request', $post->ID); ?></a>
             </div>
         </div>
     </div>

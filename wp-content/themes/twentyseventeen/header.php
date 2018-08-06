@@ -34,8 +34,8 @@
  <nav class="navbar navbar-light navbar-expand-md">
     <div class="container-fluid">
     <a class="navbar-brand" href="travelwards/home">
-            <img src="<?php the_field('main-logo', 'options'); ?>" class="d-none d-lg-block"/>
-            <img src="<?php the_field('sup-logo', 'options'); ?>" class="d-block d-lg-none"/>
+            <img src="<?php bloginfo('template_url'); ?>/travel/assets/logo.svg" class="d-none d-lg-block"/>
+            <img src="<?php bloginfo('template_url'); ?>/travel/assets/logo-icon.svg" class="d-block d-lg-none"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -76,7 +76,7 @@
             
 
 
-                <li class="nav-item dropdown  d-none d-md-block d-xl-none px-3">
+                <!-- <li class="nav-item dropdown  d-none d-md-block d-xl-none px-3">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php the_field('more', 'options'); ?>
                     </a>
@@ -84,98 +84,15 @@
                         <a class="dropdown-item d-block d-xl-none p-3" href="travelwards/faq"><?php the_field('faqs', 'options'); ?></a>
                         <a class="dropdown-item d-block d-xl-none p-3" href="travelwards/contact"><?php the_field('contact-us', 'options'); ?></a>
                     </div>
-                </li>
+                </li> -->
 
-                <li class="nav-item d-none d-lg-block">
-                    <a class="nav-link" href="#"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone-outline.svg" class="mr-1"/>
+                <li class="nav-item d-lg-block">
+                    <a class="nav-link" href="<?php echo "tel:"; the_field('header-call', 'options'); ?>">
+                        <img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone-outline.svg" class="mr-1"/>
                            <?php the_field('p-number', 'options'); ?>
                     </a>
                 </li>
             </ul>
-
-             <?php if (is_user_logged_in()): ?>
-            <div class="my-2 my-lg-0 ml-3 d-none d-md-block">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown signed-in-dropdown">
-                        <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <?php 
-                                if( have_rows('user-name', 'options') ):
-                                    while ( have_rows('user-name', 'options') ) : the_row(); 
-                                        $user_name = get_sub_field('user-name');
-                                        $avatar = get_sub_field('avatar');
-                                    endwhile;
-                                endif;
-                            ?>
-                            <span class="text-black"><?php the_field('user', 'options'); ?></span>
-                            <img src="<?php the_field('user-avatar', 'options'); ?>" width="32" height="32" />
-                        </div>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">
-                                <div class="icon">
-                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/manage.svg" />
-                                </div>
-                                <?php the_field('set-manage', 'options'); ?>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="icon">
-                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/account.svg" />
-                                </div>
-                                <?php the_field('set-account', 'options'); ?>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="icon">
-                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/support.svg" />
-                                </div>
-                                 <?php the_field('set-customer', 'options'); ?>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="icon">
-                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/staff.svg" />
-                                </div>
-                                <?php the_field('set-staff', 'options'); ?>
-                            </a>
-
-                            <a class="dropdown-item" href="#">
-                                <div class="icon">
-                                    <img src="<?php bloginfo('template_url'); ?>/travel/assets/user-dropdown/log-out.svg" />
-                                </div>
-                                <?php the_field('set-log-out', 'options'); ?>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-            <?php endif; ?>
-
-            <?php if (!is_user_logged_in()): ?>
-            <div class="my-2 my-lg-0 ml-3 d-none d-md-block">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown sign-in-dropdown">
-                        <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <button class="btn btn-sm btn-outline-secondary btn-rounded sign-in-button" data-toggle="aside" data-target="#right-aside">SIGN IN</button>
-                        </div>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <form class="py-4 px-3">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Password">
-                                </div>
-                                <button type="submit" class="btn btn-sm btn-outline-secondary btn-rounded">Sign In</button>
-                                <button type="button" class="btn btn-sm btn-link ml-3"  data-toggle="modal" data-target="#signUpModal">Sign Up</button>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
-                
-            </div>
-
-            <?php endif; ?>
-
 
 
         </div>

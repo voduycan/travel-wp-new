@@ -53,6 +53,22 @@
       margin: 0 auto;
   }
 }
+button:focus{
+  background: none;
+}
+button a:hover{
+  text-decoration: none;
+  color: white;
+}
+button a:focus{
+  outline: none;
+}
+.our-team .card-team .card-body h5{
+  color: #659BD1;
+}
+.our-team .card-team .card-body small a:hover{
+  text-decoration: none;
+}
 .current-menu-item > a { 
 color: red;
 background: yellow;
@@ -13351,8 +13367,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .navbar-brand img {
-  margin-left: -3px;
-  height: 25px;
+  height: 20px;
   width: auto;
 }
 
@@ -13486,7 +13501,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .page-about .statistic .number img {
-  height: 65px;
+  height: 60px;
   width: auto;
   margin-top: -10px;
 }
@@ -14002,7 +14017,7 @@ html[xmlns] .flexslider .slides {
   line-height: 1.5;   
 }
 .contact .media-contact > img {
-  width: 44px;
+  width: 32px;
   height: auto;
 }
 
@@ -14024,7 +14039,7 @@ html[xmlns] .flexslider .slides {
 
 .how-it-works .card-feature .card-img-top {
   width: auto;
-  height: 63px;
+  height: 64px;
 }
 
 .how-to-use {

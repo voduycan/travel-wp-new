@@ -46,7 +46,6 @@ function custom_mce_before_init( $settings ) {
 }
 
 
-
 //top menu
 add_theme_support( 'menus' );
 

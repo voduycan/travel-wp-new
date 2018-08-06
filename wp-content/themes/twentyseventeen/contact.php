@@ -28,7 +28,7 @@
         <div class="row justify-content-around my-mr">
             <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-2" src="<?php the_field('cc-location', $post->ID); ?>" alt="Location">
+                     <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/location.svg" alt="Location">
                     <div class="media-body">
                       <?php the_field('c-location-text', $post->ID); ?>
                     </div>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-2" src="<?php the_field('cc-email', $post->ID); ?>" alt="email">
+                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/customer-service.svg" alt="email">
                     <div class="media-body">
                       <?php the_field('c-email-text', $post->ID); ?>
                     </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="media media-contact mb-4 mb-md-0">
-                    <img class="mr-2" src="<?php the_field('cc-call', $post->ID); ?>" alt="call">
+                    <img class="mr-3" src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone.svg" alt="call">
                     <div class="media-body">
                       <?php the_field('c-call-text', $post->ID); ?>
                     </div>
@@ -70,7 +70,7 @@
 				?>
                 <?php if( $avatar || $name || $work || $mail ): ?>
     	            <div class="col-6 col-md-4">
-    	                <a href="#" class="card card-team d-flex align-items-center text-center my-3">
+    	                <div href="#" class="card card-team d-flex align-items-center text-center my-3">
                             <?php if( $avatar ): ?>
                                 <div class="avatar">
         	                        <img class="video-thumbnail-placeholder" src="<?php echo $avatar; ?>" alt="Travelward team">
@@ -79,9 +79,13 @@
     	                    <div class="card-body">
     	                        <h5 class="card-title"><strong><?php echo $name; ?></strong></h5>
     	                        <h6><?php echo $work; ?></h6>
-    	                        <small><?php echo $mail; ?></small>
+    	                        <small>
+                                    <a href="<?php echo "mailto:" .$mail; ?>"> 
+                                        <?php echo $mail; ?> 
+                                    </a>
+                                </small>
     	                    </div>
-    	                </a>
+    	                </div>
     	            </div>
                 <?php endif; ?> 
 			<?php endwhile; ?>

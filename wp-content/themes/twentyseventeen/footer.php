@@ -16,13 +16,13 @@
 
   <footer>
     
-    <div class="links py-5">
+    <div class="links py-5 pd-l-r-15">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-2 d-none d-md-block" style="padding-right: 0;">
                     <img src="<?php bloginfo('template_url'); ?>/travel/assets/logo.svg" class="footer-logo mb-4"/>
                 </div>
-                <div class="col-sm-3 d-none d-md-block">
+                <div class="col-sm-4 col-lg-3 d-none d-md-block">
                     <ul class="footer-list">
                         <li><?php the_field('mail1', 'options'); ?></li>
                         <li><?php the_field('mail2', 'options'); ?></li>

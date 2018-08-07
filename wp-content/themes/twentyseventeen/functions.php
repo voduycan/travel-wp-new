@@ -44,7 +44,42 @@ function custom_mce_before_init( $settings ) {
     $settings['style_formats'] = json_encode( $style_formats );
     return $settings;
 }
+// Update CSS within in Admin
+function admin_style() {
+  wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
 
+function remove_menus(){
+  remove_menu_page( 'edit-comments.php' );          //Comments
+  remove_menu_page( 'tools.php' );                  //Tools
+}
+add_action( 'admin_menu', 'remove_menus' );
+
+
+function vnkings_admin_menu( $__return_true ) {
+    return array(
+        'index.php', // Menu Bảng tin
+        'edit.php?post_type=page', // Menu Trang
+        'edit.php', // Menu Bài viết
+        'upload.php', // Menu Media
+        
+        'separator1', // Đoạn Cách
+        'users.php', // Menu Thành viên
+        'themes.php', // Menu Giao diện
+        'plugins.php', // Menu Plugins
+        'options-general.php', // Menu Cài đặt
+
+        'separator2', // Đoạn Cách
+        'edit.php?post_type=acf-field-group',
+        'admin.php?page=acf-options-header-area',
+
+        'admin.php?page=itsec',        
+        'admin.php?page=WP-Optimize',
+   );
+}
+add_filter( 'custom_menu_order', 'vnkings_admin_menu' );
+add_filter( 'menu_order', 'vnkings_admin_menu' );
 
 //top menu
 add_theme_support( 'menus' );

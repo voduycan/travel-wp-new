@@ -14,6 +14,24 @@
     height: 45px !important;
   }
 }
+.pd-l-r-15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#scroll-down img{
+    height: 20px;
+    width: auto;
+}
+@media only screen and (max-width: 767.98px){
+  .text-center-md{
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767.98px){
+  .mr-top-md{
+    margin-top: 3rem;
+  }
+}
 .js .menu-toggle, .js .dropdown-toggle {
     display: block;
     position: relative;
@@ -26,11 +44,16 @@
 .my-btn{
   border-width: 2px;
 }
-.mr-0-auto{
-  margin: 0 auto;
-}
 .mr-b-2{
   margin-bottom: 0.6rem;
+}
+.links img.social-icon:hover{
+  transform: scale(1.1); 
+  transition: 0.4s;
+}
+.our-team .avatar img{
+  width: 64px;
+  height: 64px;
 }
 @media only screen and (min-width: 768px){
   .my-mr{

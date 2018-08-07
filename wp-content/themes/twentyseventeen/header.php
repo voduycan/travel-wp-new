@@ -68,7 +68,7 @@
                 }
              ?>
                 <li class="nav-item d-lg-block">
-                    <a class="nav-link" href="<?php echo "tel:"; the_field('header-call', 'options'); ?>">
+                    <a class="nav-link" href="<?php if(get_field('header-call', 'options')){ echo "tel:"; the_field('header-call', 'options');} ?>">
                         <img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/phone-outline.svg" class="mr-1"/>
                            <?php the_field('p-number', 'options'); ?>
                     </a>

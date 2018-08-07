@@ -18,7 +18,7 @@
         <p class="px-2 px-md-5">
         <?php the_field('about-us-text', $post->ID); ?>
         </p>
-        <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/arrow-down.png" /></a>
+        <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/angle-arrow-down.svg" /></a>
         
     </div>
     <div class="divider">

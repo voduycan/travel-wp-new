@@ -15,7 +15,7 @@
     <div class="container text-center">
         <?php the_field('ct-editor', $post->ID); ?>
         <div class="row text-center justify-content-center">
-            <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/arrow-down.png" /></a>
+            <a href="#" id="scroll-down"><img src="<?php bloginfo('template_url'); ?>/travel/assets/icons/angle-arrow-down.svg" /></a>
         </div>
     </div>
         

@@ -127,7 +127,7 @@
                 <img src="<?php the_field('macbook', $post->ID); ?>" data-aos="fade-right"/>
             </div>
             
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6  text-center-md">
                 <h3><strong><?php the_field('own-title', $post->ID); ?></strong></h3>
                 <p class="my-5">
                     <?php the_field('own-normal', $post->ID); ?>
@@ -200,7 +200,7 @@
 </section>    <section class="too-good full-width-feature mt-3 pt-5">
     <div class="container">
         <div class="row justify-content-start">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6  text-center-md">
                 <h3><strong><?php the_field('t-title', $post->ID); ?></strong></h3>
                 <p class="my-5">
                     <?php the_field('t-text', $post->ID); ?>
@@ -208,7 +208,7 @@
                 <div class="pt-0 pt-lg-5 d-none d-md-block">
                     <a target="_blank" href="<?php the_field('ht-link1', $post->ID); ?>" class="btn btn-secondary btn-rounded mr-0 mr-md-4 my-btn"><?php the_field('t-find', $post->ID); ?></a>
 
-                    <a target="_blank" href="<?php echo "tel:"; the_field('ht-link2', $post->ID); ?>" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0"><?php the_field('t-call', $post->ID); ?></a>
+                    <a href="<?php if(get_field('ht-link2', $post->ID)){ echo "tel:"; the_field('ht-link2', $post->ID);} ?>" class="btn btn-outline-primary btn-rounded mt-4 mt-lg-0"><?php the_field('t-call', $post->ID); ?></a>
                 </div>
             </div>
             <div class="hero-image d-none d-md-block">
@@ -263,7 +263,7 @@
             </div>
         </div>
     </div>
-</section>    <section class="trust-you">
+</section>    <section class="trust-you mr-top-md">
     <div class="container">
         <div class="row justify-content-start">
             <div class="col-12">
@@ -286,7 +286,7 @@
        
 
         <?php if( have_rows('add-video') ): ?>
-            <div class="row div-video" id="list-video">
+            <div class="row div-video d-flex justify-content-center" id="list-video">
                 <?php while( have_rows('add-video') ): the_row(); 
 
                 // vars
@@ -362,7 +362,7 @@
         <div class="row">
             <div class="col-sm-12 d-flex align-items-center justify-content-center">
                 <h4 class="m-0 mr-2 p-0"><?php the_field('question', $post->ID); ?></h4>
-                <a target="_blank" href="<?php echo "tel:"; the_field('hf-link', $post->ID); ?>" class="btn btn-outline-primary btn-rounded"><?php the_field('request', $post->ID); ?></a>
+                <a href="<?php if(get_field('hf-link', $post->ID)){ echo "tel:"; the_field('hf-link', $post->ID);} ?>" class="btn btn-outline-primary btn-rounded"><?php the_field('request', $post->ID); ?></a>
             </div>
         </div>
     </div>
@@ -402,6 +402,6 @@
  <script type="text/javascript">
     $(document).ready(function(){
        $('#list-video > div').eq(0).removeClass('col-sm-4 d-none d-md-block');
-       $('#list-video > div').eq(0).addClass('col-12 col-sm-8 col-md-4 mr-0-auto');
+       $('#list-video > div').eq(0).addClass('col-12 col-sm-8 col-md-4');
     });
 </script>

@@ -94,29 +94,22 @@
             <?php the_field('tr-title', $post->ID) ?>
         </h4>
 
-        <?php if( have_rows('logo', $post->ID) ): ?>
-        <div class="row justify-content-center">
-            <?php while( have_rows('logo', $post->ID) ): the_row(); 
+         <?php 
 
-                $image = get_sub_field('image', $post->ID);
+        $images = get_field('ww-list-logo');
 
-            ?>
-            <?php if( $image ): ?>
-                <div class="col-4 col-md-2">
-
-                    <div class="partner-icon mb-4">
-
-                        <img src="<?php echo $image; ?>" />
-
+        if( $images ): ?>
+            <div class="row justify-content-center">
+                <?php foreach( $images as $image ): ?>
+                    <div class="col-4 col-md-2">
+                        <div class="partner-icon mb-4">
+                            <img src="<?php echo $image['url']; ?>" alt="TravelWard Partners">
+                        </div>
                     </div>
-
-                </div>
-            <?php endif ?>
-            <?php endwhile; ?>
-
-        </div>
-
+                <?php endforeach; ?>
+             </div>
         <?php endif; ?>
+
 
     </div>
 </section>    
@@ -328,28 +321,20 @@
             <strong><?php the_field('wd-title', $post->ID); ?></strong>
         </h1>
 
-         <?php if( have_rows('wd-logo', $post->ID) ): ?>
-        <div class="row justify-content-center">
-            <?php while( have_rows('wd-logo', $post->ID) ): the_row(); 
+         <?php 
 
-                $image = get_sub_field('wd-image', $post->ID);
+        $images = get_field('wd-list-logo');
 
-            ?>
-            <?php if( $image ): ?>
-                <div class="col-4 col-md-2">
-
-                    <div class="partner-icon mb-4">
-
-                        <img src="<?php echo $image; ?>" />
-
+        if( $images ): ?>
+            <div class="row justify-content-center">
+                <?php foreach( $images as $image ): ?>
+                    <div class="col-4 col-md-2">
+                        <div class="partner-icon mb-4">
+                            <img src="<?php echo $image['url']; ?>" alt="TravelWard Partners">
+                        </div>
                     </div>
-
-                </div>
-            <?php endif; ?>
-            <?php endwhile; ?>
-
-        </div>
-
+                <?php endforeach; ?>
+             </div>
         <?php endif; ?>
 
         

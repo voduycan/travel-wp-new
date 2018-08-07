@@ -23,13 +23,9 @@
                     <img src="<?php bloginfo('template_url'); ?>/travel/assets/logo.svg" class="footer-logo mb-4"/>
                 </div>
                 <div class="col-sm-4 col-lg-3 d-none d-md-block">
-                    <ul class="footer-list">
-                        <li><?php the_field('mail1', 'options'); ?></li>
-                        <li><?php the_field('mail2', 'options'); ?></li>
-                        <li><?php the_field('phone', 'options'); ?></li>
-                        <li><?php the_field('phone-aus', 'options'); ?></li>
-                        <li><?php the_field('phone-usa', 'options'); ?></li>
-                    </ul>
+                    <div class="footer-list">
+                        <?php the_field('footer-contact', 'options'); ?>
+                    </div>
                 </div>
 
                 <div class="col-5 col-md-2">

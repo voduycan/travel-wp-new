@@ -220,24 +220,22 @@
 </section>    
 <section class="partner pt-3">
     <div class="container">
+        
+            <?php 
 
-    	<?php if( have_rows('a-logo', $post->ID) ): ?>
-        <div class="row justify-content-center">
-        	<?php while( have_rows('a-logo', $post->ID) ): the_row(); 
+            $images = get_field('list-logo');
 
-				// vars
-				$image = get_sub_field('a-image', $post->ID);
-				?>
-				<?php if( $image ): ?>
-		            <div class="col-4 col-md-2">
-		                <div class="partner-icon mb-4">
-		                    <img src="<?php echo $image; ?>" alt="TravelWard Partners">
-		                </div>
-		            </div>
-	            <?php endif; ?>
-            <?php endwhile; ?>
-        </div>
-    	<?php endif; ?>
+            if( $images ): ?>
+                <div class="row justify-content-center">
+                    <?php foreach( $images as $image ): ?>
+                        <div class="col-4 col-md-2">
+                            <div class="partner-icon mb-4">
+                                <img src="<?php echo $image['url']; ?>" alt="TravelWard Partners">
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                 </div>
+            <?php endif; ?>
     </div>
 </section>
 </div>

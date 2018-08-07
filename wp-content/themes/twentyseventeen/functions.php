@@ -52,7 +52,8 @@ add_action('admin_enqueue_scripts', 'admin_style');
 
 function remove_menus(){
   remove_menu_page( 'edit-comments.php' );          //Comments
-  remove_menu_page( 'tools.php' );                  //Tools
+  remove_menu_page( 'tools.php' );   //Tools
+  remove_menu_page('edit.php'); // Menu Bài viết               
 }
 add_action( 'admin_menu', 'remove_menus' );
 
@@ -60,9 +61,9 @@ add_action( 'admin_menu', 'remove_menus' );
 function vnkings_admin_menu( $__return_true ) {
     return array(
         'index.php', // Menu Bảng tin
-        'edit.php?post_type=page', // Menu Trang
-        'edit.php', // Menu Bài viết
         'upload.php', // Menu Media
+        'edit.php?post_type=page', // Menu Trang
+        'admin.php?page=acf-options-header-area',
         
         'separator1', // Đoạn Cách
         'users.php', // Menu Thành viên
@@ -72,7 +73,7 @@ function vnkings_admin_menu( $__return_true ) {
 
         'separator2', // Đoạn Cách
         'edit.php?post_type=acf-field-group',
-        'admin.php?page=acf-options-header-area',
+        
 
         'admin.php?page=itsec',        
         'admin.php?page=WP-Optimize',

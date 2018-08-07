@@ -29,7 +29,7 @@
 }
 @media only screen and (max-width: 767.98px){
   .mr-top-md{
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 }
 .js .menu-toggle, .js .dropdown-toggle {
@@ -47,13 +47,19 @@
 .mr-b-2{
   margin-bottom: 0.6rem;
 }
+.links img.social-icon{
+  transition: 0.4s;
+}
 .links img.social-icon:hover{
   transform: scale(1.1); 
-  transition: 0.4s;
 }
 .our-team .avatar img{
   width: 64px;
   height: 64px;
+}
+div.footer-list p{
+    margin-bottom: 0;
+    padding: 5px 0
 }
 @media only screen and (min-width: 768px){
   .my-mr{
@@ -14233,9 +14239,10 @@ body {
   height: 45px;
   color: #000;
 }
-@media only screen and (min-width: 576px) and (max-width: 767px){
+@media only screen and (max-width: 767px){
   .card-video .card-title {
     height: auto;
+    margin-bottom: 0;
   }
 }
 .card-video:hover {

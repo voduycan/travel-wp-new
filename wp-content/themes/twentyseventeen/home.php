@@ -83,7 +83,7 @@
                     }
                  ?>
                 <button class="btn btn-lg btn-outline-primary btn-rounded mt-4 mt-lg-2 contact-button">
-                    <a target="_blank" href="<?php echo $link; ?>"><?php the_field('c-btn', $post->ID); ?></a>
+                    <a <?php if(!strpos($link, "@")){echo 'target="_blank"';} ?>  href="<?php echo $link; ?>"><?php the_field('c-btn', $post->ID); ?></a>
                 </button>
             </div>
         </div>

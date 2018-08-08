@@ -24,6 +24,7 @@ if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
         return $initArray;
     }
 }
+
 add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 
 
@@ -50,37 +51,7 @@ function admin_style() {
 }
 add_action('admin_enqueue_scripts', 'admin_style');
 
-function remove_menus(){
-  remove_menu_page( 'edit-comments.php' );          //Comments
-  remove_menu_page( 'tools.php' );   //Tools
-  remove_menu_page('edit.php'); // Menu Bài viết               
-}
-add_action( 'admin_menu', 'remove_menus' );
 
-
-function vnkings_admin_menu( $__return_true ) {
-    return array(
-        'index.php', // Menu Bảng tin
-        'upload.php', // Menu Media
-        'edit.php?post_type=page', // Menu Trang
-        'admin.php?page=acf-options-header-area',
-        
-        'separator1', // Đoạn Cách
-        'users.php', // Menu Thành viên
-        'themes.php', // Menu Giao diện
-        'plugins.php', // Menu Plugins
-        'options-general.php', // Menu Cài đặt
-
-        'separator2', // Đoạn Cách
-        'edit.php?post_type=acf-field-group',
-        
-
-        'admin.php?page=itsec',        
-        'admin.php?page=WP-Optimize',
-   );
-}
-add_filter( 'custom_menu_order', 'vnkings_admin_menu' );
-add_filter( 'menu_order', 'vnkings_admin_menu' );
 
 //top menu
 add_theme_support( 'menus' );

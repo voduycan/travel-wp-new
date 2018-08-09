@@ -51,8 +51,21 @@ function admin_style() {
 }
 add_action('admin_enqueue_scripts', 'admin_style');
 
+function wpse_edit_footer() {
+    add_filter( 'admin_footer_text', 'wpse_edit_text', 11 );
+}
 
+function wpse_edit_text($content) {
+    return "";
+}
 
+add_action( 'admin_init', 'wpse_edit_footer' );
+
+function my_footer_shh() {
+    remove_filter( 'update_footer', 'core_update_footer' ); 
+}
+
+add_action( 'admin_menu', 'my_footer_shh' );
 //top menu
 add_theme_support( 'menus' );
 
